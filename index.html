@@ -347,7 +347,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
     </div>
     <div class="nav-right">
       <button class="search-btn">Search</button>
-      <button class="subscribe-btn">Subscribe</button>
+      <button class="subscribe-btn" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Subscribe</button>
     </div>
   </div>
 </header>
@@ -377,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
     </div>
     <div class="cover-meta-item">
       <span class="label">Read</span>
-      <span class="value"><a href="Refract_Article.html">Full analysis →</a></span>
+      <span class="value"><a href="article.html">Full analysis →</a></span>
     </div>
   </div>
 </div>
@@ -392,7 +392,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
   </div>
 
   <div class="article-grid">
-    <div class="article-card">
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category sage">LGBTQ+ Rights</div>
       <h2 class="card-headline">MHOL reports 40% increase in hate crimes against trans women in Lima — police response inadequate</h2>
       <p class="card-deck">New data from Peru's oldest LGBTQ+ organisation shows a sharp rise in targeted violence, with less than 8% of cases resulting in formal charges.</p>
@@ -400,8 +400,8 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Mar 4, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
-    <div class="article-card">
+    </a>
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category slate">Analysis</div>
       <h2 class="card-headline">Why the Biden-era healthcare protections are harder to undo than Trump's team expected</h2>
       <p class="card-deck">Three legal scholars explain the procedural barriers the executive order missed, and what that means for trans patients in 14 states.</p>
@@ -409,8 +409,8 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Mar 3, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
-    <div class="article-card">
+    </a>
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category amber">Fact-Check</div>
       <div class="verdict misleading" style="margin-bottom:8px;">● Misleading</div>
       <h2 class="card-headline">Did Peru's health ministry cite "no scientific evidence" for trans healthcare?</h2>
@@ -419,8 +419,8 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Mar 2, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
-    <div class="article-card">
+    </a>
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category terra">Breaking</div>
       <h2 class="card-headline">Peruvian Congress introduces bill to criminalise "gender ideology" in schools</h2>
       <p class="card-deck">The proposed legislation targets curriculum materials covering sexual orientation and gender identity. Human rights groups are preparing a constitutional challenge.</p>
@@ -428,8 +428,8 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Mar 1, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
-    <div class="article-card">
+    </a>
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category slate">Science</div>
       <h2 class="card-headline">A new paper on BSTc neuron density confirms what trans advocates have argued for years</h2>
       <p class="card-deck">Published in Nature Neuroscience, the study adds to a growing body of evidence suggesting neurobiological underpinnings to gender identity that predate social transition.</p>
@@ -437,8 +437,8 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Feb 28, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
-    <div class="article-card">
+    </a>
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
       <div class="card-category sage">Peru</div>
       <h2 class="card-headline">PROMSEX's new report maps every LGBTQ+ legal right Peru lacks — and the countries that got there first</h2>
       <p class="card-deck">Across 14 dimensions of legal protection, Peru ranks in the bottom third of South American nations. The report names the specific legislative changes needed.</p>
@@ -446,7 +446,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <span class="card-date">Feb 27, 2026</span>
         <span class="card-read">Read →</span>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -637,7 +637,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
     <div>
       <div class="newsletter-form">
         <input class="newsletter-input" type="email" placeholder="your@email.com">
-        <button class="newsletter-submit">Subscribe</button>
+        <button class="newsletter-submit" onclick="alert('Thanks for subscribing! We'll be in touch.')">Subscribe</button>
       </div>
       <p class="newsletter-note">No spam. Unsubscribe anytime. We never share your data.</p>
     </div>
