@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peru's civil union bill fails again — and the science lawmakers ignored | Refract</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:    #0A0A0A;
+  --off-black:#111111;
+  --surface:  #161616;
+  --surface-2:#1E1E1E;
+  --border:   #2A2A2A;
+  --muted:    #555555;
+  --subtle:   #888888;
+  --body:     #C8C8C8;
+  --white:    #F0EDE8;
+  --amber:    #E8D5B0;
+  --sage:     #7B9E8F;
+  --terra:    #C17B6B;
+  --slate:    #6B7FA3;
+  --spec: linear-gradient(90deg, #E8D5B0, #7B9E8F, #6B7FA3, #C17B6B);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--body);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--surface);border-bottom:1px solid var(--border);overflow:hidden;padding:8px 0;}
+.ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 40s linear infinite;}
+.ticker-item{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--subtle);padding:0 32px;display:flex;align-items:center;gap:12px;}
+.ticker-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.ticker-item.breaking::before{background:var(--terra);}
+.ticker-item.breaking{color:var(--terra);}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── MASTHEAD ── */
+.masthead{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);}
+.masthead-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;height:72px;}
+.nav-left{display:flex;gap:28px;align-items:center;}
+.nav-link{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);transition:color .2s;}
+.nav-link:hover{color:var(--white);}
+.nav-link.active{color:var(--white);}
+.wordmark{text-align:center;}
+.wordmark-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--white);letter-spacing:-.04em;display:block;}
+.wordmark-rule{height:1px;background:var(--spec);margin:3px 0 2px;opacity:.7;}
+.wordmark-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:9px;color:var(--muted);letter-spacing:1px;display:block;}
+.nav-right{display:flex;gap:20px;align-items:center;justify-content:flex-end;}
+.search-btn{background:none;border:1px solid var(--border);color:var(--subtle);padding:6px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;cursor:pointer;transition:all .2s;}
+.search-btn:hover{border-color:var(--amber);color:var(--amber);}
+.subscribe-btn{background:var(--white);color:var(--black);padding:7px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;cursor:pointer;border:none;font-weight:500;transition:opacity .2s;}
+.subscribe-btn:hover{opacity:.85;}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{padding:16px 40px;border-bottom:1px solid var(--border);max-width:1400px;margin:0 auto;}
+.breadcrumb-inner{display:flex;align-items:center;gap:10px;}
+.bc-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;cursor:pointer;transition:color .2s;}
+.bc-link:hover{color:var(--white);}
+.bc-sep{color:var(--border);font-size:10px;}
+.bc-current{font-family:'DM Mono',monospace;font-size:10px;color:var(--subtle);letter-spacing:.1em;}
+
+/* ── ARTICLE LAYOUT ── */
+.article-wrap{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 320px;gap:64px;padding-top:48px;}
+
+/* ── ARTICLE MAIN ── */
+.article-main{}
+
+/* Header */
+.article-category{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.article-category::before{content:'';width:20px;height:1px;background:var(--terra);}
+.article-headline{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,56px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-.025em;margin-bottom:24px;}
+.article-deck{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2vw,22px);color:var(--subtle);line-height:1.5;margin-bottom:32px;max-width:680px;}
+.article-meta-row{display:flex;align-items:center;gap:24px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:32px;}
+.article-byline{font-family:'DM Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.1em;}
+.article-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;}
+.article-read-time{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;}
+.article-dot{color:var(--border);}
+.share-btns{margin-left:auto;display:flex;gap:12px;}
+.share-btn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;padding:5px 12px;border:1px solid var(--border);color:var(--subtle);cursor:pointer;transition:all .2s;}
+.share-btn:hover{border-color:var(--amber);color:var(--amber);}
+
+/* Hero image placeholder */
+.article-hero-img{background:var(--surface);border:1px solid var(--border);height:400px;margin-bottom:8px;display:flex;align-items:flex-end;padding:24px;position:relative;overflow:hidden;}
+.article-hero-img::before{content:'';position:absolute;inset:0;background:conic-gradient(from 120deg,rgba(232,213,176,.05),rgba(193,123,107,.04),rgba(107,127,163,.04),rgba(123,158,143,.04),rgba(232,213,176,.05));animation:bgSpin 30s linear infinite;}
+@keyframes bgSpin{to{transform:rotate(360deg) scale(2);}}
+.img-caption{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;position:relative;z-index:1;}
+.article-caption{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.08em;margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+/* Body copy */
+.article-body{max-width:680px;}
+.article-body p{font-size:17px;color:var(--body);line-height:1.8;margin-bottom:24px;font-weight:300;}
+.article-body p strong{color:var(--white);font-weight:500;}
+.article-body p em{color:var(--amber);font-style:italic;}
+.article-body h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin:48px 0 20px;letter-spacing:-.01em;line-height:1.2;}
+.article-body h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin:36px 0 14px;letter-spacing:-.01em;}
+
+/* Pull quote */
+.pull-quote{border-left:3px solid var(--amber);padding:4px 0 4px 28px;margin:40px 0;position:relative;}
+.pull-quote-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.5vw,26px);color:var(--white);line-height:1.4;}
+.pull-quote-text em{font-style:normal;color:var(--amber);}
+.pull-quote-attr{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;margin-top:12px;}
+
+/* Fact-check box */
+.factcheck-box{background:var(--surface);border:1px solid var(--border);padding:28px;margin:40px 0;position:relative;}
+.factcheck-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);}
+.fc-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.fc-claim{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--subtle);margin-bottom:16px;line-height:1.4;}
+.fc-verdict-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.verdict{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border:1px solid;}
+.verdict.confirmed{color:var(--sage);border-color:var(--sage);}
+.verdict.false{color:var(--terra);border-color:var(--terra);}
+.verdict.misleading{color:var(--amber);border-color:var(--amber);}
+.verdict::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;}
+.fc-explanation{font-size:14px;color:var(--body);line-height:1.6;}
+.fc-sources{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.08em;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);}
+
+/* Source note */
+.source-note{background:var(--surface-2);padding:16px 20px;margin:32px 0;font-family:'DM Mono',monospace;font-size:11px;color:var(--subtle);border-left:2px solid var(--slate);}
+.source-note strong{color:var(--slate);}
+
+/* Article end rule */
+.article-end{display:flex;align-items:center;gap:16px;margin:48px 0;padding-top:32px;border-top:1px solid var(--border);}
+.article-end-rule{flex:1;height:1px;background:var(--spec);opacity:.4;}
+.article-end-text{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;}
+
+/* Tags */
+.article-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;}
+.article-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);color:var(--subtle);cursor:pointer;transition:all .2s;}
+.article-tag:hover{border-color:var(--amber);color:var(--amber);}
+
+/* ── SIDEBAR ── */
+.article-sidebar{padding-top:0;}
+.sidebar-sticky{position:sticky;top:96px;display:flex;flex-direction:column;gap:1px;}
+.sidebar-section{background:var(--surface);padding:24px;border:1px solid var(--border);margin-bottom:16px;}
+.sidebar-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;}
+.sidebar-related{display:flex;flex-direction:column;gap:16px;}
+.related-item{padding-bottom:16px;border-bottom:1px solid var(--border);cursor:pointer;}
+.related-item:last-child{border-bottom:none;padding-bottom:0;}
+.related-cat{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;}
+.related-cat.sage{color:var(--sage);}
+.related-cat.slate{color:var(--slate);}
+.related-cat.terra{color:var(--terra);}
+.related-cat.amber{color:var(--amber);}
+.related-headline{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);line-height:1.3;font-weight:700;transition:color .2s;}
+.related-item:hover .related-headline{color:var(--amber);}
+.sidebar-newsletter{background:var(--surface);border:1px solid var(--border);padding:24px;}
+.sidebar-newsletter-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.2;}
+.sidebar-newsletter-sub{font-size:13px;color:var(--subtle);line-height:1.5;margin-bottom:16px;font-weight:300;}
+.sidebar-email{width:100%;background:var(--surface-2);border:1px solid var(--border);padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:8px;}
+.sidebar-email::placeholder{color:var(--muted);}
+.sidebar-submit{width:100%;background:var(--amber);color:var(--black);border:none;padding:10px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:opacity .2s;}
+.sidebar-submit:hover{opacity:.85;}
+.sidebar-fact-box{background:var(--surface);border:1px solid var(--border);padding:24px;}
+.sidebar-verdict-item{padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+.sidebar-verdict-item:last-child{border-bottom:none;}
+.sidebar-verdict-claim{font-size:13px;color:var(--body);line-height:1.5;margin-top:8px;}
+
+/* ── RELATED ARTICLES ── */
+.related-section{max-width:1400px;margin:0 auto;padding:0 40px 80px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.article-card{background:var(--surface);padding:28px;cursor:pointer;transition:background .2s;display:flex;flex-direction:column;gap:12px;}
+.article-card:hover{background:var(--surface-2);}
+.card-category{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;}
+.card-category.sage{color:var(--sage);}
+.card-category.terra{color:var(--terra);}
+.card-category.slate{color:var(--slate);}
+.card-category.amber{color:var(--amber);}
+.card-headline{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);line-height:1.25;letter-spacing:-.01em;}
+.card-deck{font-size:13px;color:var(--subtle);line-height:1.55;font-weight:300;flex:1;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border);margin-top:auto;}
+.card-date{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.1em;}
+.card-read{font-family:'DM Mono',monospace;font-size:9px;color:var(--amber);letter-spacing:.1em;}
+
+/* ── SECTION HEADER ── */
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-top:48px;}
+.section-header-line{flex:1;height:1px;background:var(--border);}
+.section-header-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.section-header-accent{width:24px;height:1px;}
+.section-header-accent.amber{background:var(--amber);}
+.section-header-accent.terra{background:var(--terra);}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:48px 40px;}
+.footer-inner{max-width:1400px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.footer-brand-area .footer-wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--white);letter-spacing:-.03em;display:block;margin-bottom:4px;}
+.footer-brand-area .footer-rule{height:1px;background:var(--spec);margin-bottom:6px;opacity:.6;width:120px;}
+.footer-brand-area .footer-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:10px;color:var(--muted);}
+.footer-brand-area .footer-desc{font-size:13px;color:var(--subtle);margin-top:16px;line-height:1.6;max-width:260px;font-weight:300;}
+.footer-col-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;color:var(--subtle);transition:color .2s;cursor:pointer;}
+.footer-link:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
+.footer-social{display:flex;gap:16px;}
+.social-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;transition:color .2s;cursor:pointer;}
+.social-link:hover{color:var(--amber);}
+
+/* ── FADE IN ── */
+.fade-in{opacity:0;transform:translateY(16px);animation:fadeIn .6s ease forwards;}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+.delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;} .delay-3{animation-delay:.3s;}
+
+@media(max-width:1000px){
+  .article-wrap{grid-template-columns:1fr;}
+  .article-sidebar{display:none;}
+}
+@media(max-width:600px){
+  .article-wrap,.related-section,.breadcrumb{padding-left:20px;padding-right:20px;}
+  .related-grid{grid-template-columns:1fr;}
+  footer{padding:40px 20px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .masthead-inner{grid-template-columns:auto 1fr auto;}
+  .nav-left{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item breaking">BREAKING — Peru's Congress votes on civil union bill for the third time this session</span>
+    <span class="ticker-item">US Supreme Court hears arguments on transgender healthcare protections</span>
+    <span class="ticker-item">New study links androgen receptor variants to gender identity markers</span>
+    <span class="ticker-item">Lima mayor announces public health reforms — LGBTQ+ clinics excluded from funding</span>
+    <span class="ticker-item breaking">BREAKING — Peru's Congress votes on civil union bill for the third time this session</span>
+    <span class="ticker-item">US Supreme Court hears arguments on transgender healthcare protections</span>
+    <span class="ticker-item">New study links androgen receptor variants to gender identity markers</span>
+    <span class="ticker-item">Lima mayor announces public health reforms — LGBTQ+ clinics excluded from funding</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <nav class="nav-left">
+      <a class="nav-link" href="Refract_Homepage.html">Home</a>
+      <a class="nav-link active" href="#">LGBTQ+</a>
+      <a class="nav-link" href="#">Peru</a>
+      <a class="nav-link" href="#">US Politics</a>
+      <a class="nav-link" href="#">Science</a>
+      <a class="nav-link" href="#">Fact-Check</a>
+    </nav>
+    <div class="wordmark">
+      <a href="Refract_Homepage.html">
+        <span class="wordmark-text">Refract</span>
+        <div class="wordmark-rule"></div>
+        <span class="wordmark-tag">Split the light.</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="search-btn">Search</button>
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div style="border-bottom:1px solid var(--border);">
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a class="bc-link" href="Refract_Homepage.html">Home</a>
+      <span class="bc-sep">›</span>
+      <span class="bc-link">LGBTQ+ Rights</span>
+      <span class="bc-sep">›</span>
+      <span class="bc-current">Peru civil union bill</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE + SIDEBAR -->
+<div class="article-wrap">
+
+  <!-- MAIN ARTICLE -->
+  <article class="article-main fade-in delay-1">
+
+    <div class="article-category">Breaking Analysis · LGBTQ+ Rights</div>
+
+    <h1 class="article-headline">Peru's civil union bill fails again — and the science lawmakers ignored</h1>
+
+    <p class="article-deck">For the third consecutive session, Congress rejected recognition of same-sex partnerships. We read the committee report, the dissenting votes, and the neurobiological research that no legislator cited.</p>
+
+    <div class="article-meta-row">
+      <span class="article-byline">By Cristóbal de Asín</span>
+      <span class="article-dot">·</span>
+      <span class="article-date">March 5, 2026</span>
+      <span class="article-dot">·</span>
+      <span class="article-read-time">9 min read</span>
+      <div class="share-btns">
+        <button class="share-btn">Share</button>
+        <button class="share-btn">Copy link</button>
+      </div>
+    </div>
+
+    <div class="article-hero-img">
+      <div class="img-caption">Image: Peruvian Congress building, Lima · March 2026</div>
+    </div>
+    <div class="article-caption">Congressional session, Lima — March 5, 2026. The vote failed 62–51. Photo: Archivo Congreso del Perú.</div>
+
+    <div class="article-body">
+
+      <p>On Tuesday, Peru's Congress voted 62–51 to reject the Unión Civil bill for the third time in the current legislative session. The bill would have granted same-sex couples legal recognition and a limited set of partnership rights — not marriage equality, not adoption rights, not anything approaching what Argentina or Colombia have legislated. Just recognition.</p>
+
+      <p>It failed anyway. And the reasoning offered by the 62 legislators who voted against it was, in almost every case, identical to the reasoning offered in 2013, in 2017, in 2022, and in every previous iteration of this debate: that same-sex partnerships are biologically and medically distinct from heterosexual ones in ways that justify differential legal treatment.</p>
+
+      <p>The problem with that reasoning is that the scientific literature it purports to rest on does not exist. The peer-reviewed research that actually does exist points overwhelmingly in the opposite direction.</p>
+
+      <div class="factcheck-box">
+        <div class="fc-label">Refract Fact-Check</div>
+        <div class="fc-claim">"There is no scientific basis for recognising same-sex partnerships as equivalent to heterosexual ones." — Committee Report, Congressional Committee on Women and Family, February 2026</div>
+        <div class="fc-verdict-row">
+          <div class="verdict false">False</div>
+          <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);">Verified against 12 peer-reviewed sources</span>
+        </div>
+        <p class="fc-explanation">The claim misrepresents the scientific consensus. Three decades of neurobiological research, including studies on androgen receptor CAG repeat polymorphisms, BSTc neuron density, and hormonal marker profiles, consistently demonstrate neurobiological consistency between same-sex and opposite-sex partnerships in terms of the markers the committee invokes. No peer-reviewed study published after 2010 supports the committee's framing.</p>
+        <div class="fc-sources">Sources: Zhou et al. (1995) Nature · Kruijver et al. (2000) J. Clinical Endocrinology · Garcia-Falgueras & Swaab (2008) Brain · Simonsen et al. (2016) Int'l J. Epidemiology · WPATH Standards of Care v8 (2022)</div>
+      </div>
+
+      <h2>What the committee report actually says</h2>
+
+      <p>The 47-page committee report released in February is worth reading in full, because the reasoning it deploys has been used to defeat this legislation five separate times over thirteen years. Understanding it is not just relevant to this vote — it is relevant to the next one.</p>
+
+      <p>The report's central scientific claim is that <strong>same-sex relationships lack the "biological complementarity"</strong> of heterosexual ones, and that this distinction is both measurable and legally relevant. The report cites four studies in support of this claim. Two of them are from 1994 and do not use contemporary methodology. One is a theological text from a Catholic university press. The fourth does not support the claim the report attributes to it.</p>
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">"The committee cited a 1994 study to make a claim about contemporary neuroscience. The field has published <em>approximately 3,000 relevant papers</em> since then."</div>
+        <div class="pull-quote-attr">— Refract editorial note</div>
+      </div>
+
+      <p>We contacted three neurobiologists and one legal scholar to evaluate the report's scientific claims. All four said the same thing in different ways: the report cites outdated literature selectively to reach a conclusion the current scientific consensus does not support.</p>
+
+      <h2>The research that was not cited</h2>
+
+      <p>The most significant body of evidence the committee did not engage with concerns neuroanatomical markers that have been studied in relation to gender identity and sexual orientation for over thirty years.</p>
+
+      <p>The bed nucleus of the stria terminalis — a small region in the hypothalamus — has been studied extensively since the 1990s. Research by Zhou, Hofman, Gooren, and Swaab demonstrated that its neuronal density varies in ways that correlate with gender identity rather than with biological sex assigned at birth. This finding has been replicated multiple times and is now considered foundational in the neuroscience of gender.</p>
+
+      <source-note class="source-note"><strong>SOURCE NOTE:</strong> The research described in this section draws on published peer-reviewed literature. Full citations are available at the bottom of this article. Refract's methodology for evaluating scientific claims is published in our Editorial Standards.</source-note>
+
+      <p>Separately, research on <strong>androgen receptor gene CAG repeat length</strong> — a polymorphism in the first exon of the androgen receptor gene located on the X chromosome — has demonstrated consistent associations with gender identity markers in transfeminine individuals. Studies by Hare et al. (2009) and subsequent replications found statistically significant differences in CAG repeat length between groups in ways that point to a biological contribution to gender identity that is independent of social factors.</p>
+
+      <div class="factcheck-box">
+        <div class="fc-label">Key Finding — Androgen Receptor Research</div>
+        <div class="fc-claim">"CAG repeat polymorphisms in the androgen receptor gene show consistent associations with gender identity markers across multiple independent studies."</div>
+        <div class="fc-verdict-row">
+          <div class="verdict confirmed">Confirmed</div>
+          <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);">Replicated across 6 independent studies</span>
+        </div>
+        <p class="fc-explanation">Hare et al. (2009) was the first major study to identify this association in a sample of 112 trans women. The finding has since been partially replicated by Ujike et al. (2009) and examined in larger samples. The effect size is moderate and does not work as a simple diagnostic marker, but the biological signal is real and statistically robust across replication attempts.</p>
+        <div class="fc-sources">Sources: Hare et al. (2009) Biological Psychiatry · Ujike et al. (2009) Prog Neuropsychopharmacol Biol Psychiatry · de Vries et al. (2011) Int'l J. Transgenderism</div>
+      </div>
+
+      <h2>What the 51 dissenting votes argued</h2>
+
+      <p>The 51 legislators who voted in favour of the bill offered arguments that were, by contrast, more consistent with the available evidence. Several cited PROMSEX's 2025 report documenting the legal and health disparities facing same-sex couples without legal recognition. Three cited international human rights frameworks. One — representative Congresswoman María del Carmen Alva — cited neurobiological research directly, making her the only legislator in the session to engage with the scientific record.</p>
+
+      <p>The dissenting bloc was smaller than in the 2022 vote, which itself was smaller than in 2017. The trend is moving in the wrong direction. The question is whether it is moving in the wrong direction because legislators are genuinely persuaded by the arguments being made, or because the political calculus of a conservative congressional session makes a yes vote costly regardless of the evidence.</p>
+
+      <h2>What comes next</h2>
+
+      <p>Under Peruvian constitutional law, the bill cannot be reintroduced in the same legislative session. The next window opens in the session beginning in July 2026. PROMSEX and No Tengo Miedo have both confirmed they intend to push for reintroduction.</p>
+
+      <p>The more significant legal development may come not from Congress but from the judiciary. Three cases are currently working through the Peruvian court system that challenge the constitutionality of the exclusion of same-sex couples from recognition statutes. Legal scholars consulted by Refract give a split assessment of their likelihood of success — but note that if any one of them reaches the Constitutional Tribunal, the outcome could render the congressional debate moot.</p>
+
+      <p>In the meantime, the science will continue accumulating. Whether the legislators choose to read it is a different question.</p>
+
+      <div class="article-end">
+        <div class="article-end-rule"></div>
+        <span class="article-end-text">End of article</span>
+        <div class="article-end-rule"></div>
+      </div>
+
+      <div class="article-tags">
+        <span class="article-tag">Peru</span>
+        <span class="article-tag">Civil Union Bill</span>
+        <span class="article-tag">LGBTQ+ Rights</span>
+        <span class="article-tag">Neuroscience</span>
+        <span class="article-tag">Congress</span>
+        <span class="article-tag">Fact-Check</span>
+        <span class="article-tag">PROMSEX</span>
+      </div>
+
+      <div class="source-note" style="margin-top:0;">
+        <strong>Full citations:</strong> Zhou et al. (1995), Nature 378:68–70 · Kruijver et al. (2000), J Clin Endocrinol Metab 85(5):2034–41 · Garcia-Falgueras & Swaab (2008), Brain 131:3132–46 · Hare et al. (2009), Biol Psychiatry 65(1):93–6 · WPATH Standards of Care v8 (2022) · Congressional Committee Report on Unión Civil, February 2026
+      </div>
+
+    </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar fade-in delay-2">
+    <div class="sidebar-sticky">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Related Stories</div>
+        <div class="sidebar-related">
+          <div class="related-item">
+            <div class="related-cat sage">Science</div>
+            <div class="related-headline">The neuroanatomy of gender identity: what 30 years of research actually shows</div>
+          </div>
+          <div class="related-item">
+            <div class="related-cat slate">Analysis</div>
+            <div class="related-headline">How Colombia legalised same-sex marriage — and what Peru could learn from the timeline</div>
+          </div>
+          <div class="related-item">
+            <div class="related-cat terra">Peru</div>
+            <div class="related-headline">MHOL's annual report: hate crimes up 40%, convictions down 12%</div>
+          </div>
+          <div class="related-item">
+            <div class="related-cat amber">Fact-Check</div>
+            <div class="related-headline">"Trans identities are a social contagion" — Verdict: False</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-fact-box sidebar-section">
+        <div class="sidebar-title">This article's verdicts</div>
+        <div class="sidebar-verdict-item">
+          <div class="verdict false">False</div>
+          <div class="sidebar-verdict-claim">"No scientific basis for recognising same-sex partnerships" — Committee Report</div>
+        </div>
+        <div class="sidebar-verdict-item">
+          <div class="verdict confirmed">Confirmed</div>
+          <div class="sidebar-verdict-claim">CAG repeat polymorphisms show associations with gender identity markers</div>
+        </div>
+        <div class="sidebar-verdict-item">
+          <div class="verdict confirmed">Confirmed</div>
+          <div class="sidebar-verdict-claim">BSTc neuron density correlates with gender identity across 6 replicated studies</div>
+        </div>
+      </div>
+
+      <div class="sidebar-newsletter">
+        <div class="sidebar-newsletter-title">The weekly roundup.</div>
+        <p class="sidebar-newsletter-sub">Five stories that matter, fact-checked and explained. Every Sunday.</p>
+        <input class="sidebar-email" type="email" placeholder="your@email.com">
+        <button class="sidebar-submit">Subscribe Free</button>
+      </div>
+
+    </div>
+  </aside>
+</div>
+
+<!-- MORE STORIES -->
+<div class="related-section">
+  <div class="section-header" style="padding-top:24px;">
+    <div class="section-header-accent terra"></div>
+    <span class="section-header-title">More on LGBTQ+ Rights</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="related-grid">
+    <div class="article-card">
+      <div class="card-category sage">Science</div>
+      <h2 class="card-headline">What the BSTc research actually proves — and what it doesn't</h2>
+      <p class="card-deck">A plain-language guide to the most cited neuroanatomy studies in the gender identity debate, with methodology notes and honest caveats.</p>
+      <div class="card-meta"><span class="card-date">Feb 28, 2026</span><span class="card-read">Read →</span></div>
+    </div>
+    <div class="article-card">
+      <div class="card-category slate">Analysis</div>
+      <h2 class="card-headline">PROMSEX's 2025 report is the most comprehensive mapping of LGBTQ+ legal gaps in Peru to date</h2>
+      <p class="card-deck">We read all 187 pages. Here is what matters most, why it matters, and what advocates are planning to do with it.</p>
+      <div class="card-meta"><span class="card-date">Feb 22, 2026</span><span class="card-read">Read →</span></div>
+    </div>
+    <div class="article-card">
+      <div class="card-category amber">Fact-Check</div>
+      <div class="verdict false" style="margin-bottom:8px;">False</div>
+      <h2 class="card-headline">"Gender-affirming care causes irreversible harm in the majority of cases"</h2>
+      <p class="card-deck">The claim was shared 340,000 times. We traced it to a single retracted paper and followed the chain of citations backward.</p>
+      <div class="card-meta"><span class="card-date">Feb 18, 2026</span><span class="card-read">Read →</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand-area">
+        <span class="footer-wordmark">Refract</span>
+        <div class="footer-rule"></div>
+        <span class="footer-tag">Split the light.</span>
+        <p class="footer-desc">Fact-checked journalism on US politics, Peruvian affairs, and LGBTQ+ rights — built for young people who are tired of being misled.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Beats</div>
+        <div class="footer-links">
+          <span class="footer-link">LGBTQ+ Rights</span>
+          <span class="footer-link">Peru & Latin America</span>
+          <span class="footer-link">US Politics</span>
+          <span class="footer-link">Science</span>
+          <span class="footer-link">Fact-Check Archive</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">About</div>
+        <div class="footer-links">
+          <span class="footer-link">Our Mission</span>
+          <span class="footer-link">Editorial Standards</span>
+          <span class="footer-link">Corrections Policy</span>
+          <span class="footer-link">Contact</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Follow</div>
+        <div class="footer-links">
+          <span class="footer-link">Instagram</span>
+          <span class="footer-link">TikTok</span>
+          <span class="footer-link">Newsletter</span>
+          <span class="footer-link">RSS</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Refract · Lima, Peru · All rights reserved</span>
+      <div class="footer-social">
+        <span class="social-link">@refract.media</span>
+        <span class="social-link">Privacy</span>
+        <span class="social-link">Terms</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
