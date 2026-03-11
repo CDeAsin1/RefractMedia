@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Categories | Refract</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   ✏️  REFRACT CATEGORIES PAGE — ALL EDITABLE CONTENT IS HERE
+   To add an article to a category: add an object to that
+   category's "articles" array.
+   To add a brand new category: copy one category block and
+   change the name, color, description, and icon.
+   DO NOT edit anything below the closing script tag.
+============================================================ */
+
+const CATEGORIES_PAGE = {
+
+  /* --------------------------------------------------------
+     🔗 NAV HEADER LINKS
+     Add new pages here. Set active: true for the current section.
+     ➕ To add a new page: { label: "My Page", href: "mypage.html", active: false }
+  -------------------------------------------------------- */
+  nav: [
+    { label: "Home",        href: "index.html",       active: false },
+    { label: "LGBTQ+",      href: "categories.html",  active: true  },
+    { label: "Peru",        href: "categories.html",  active: false },
+    { label: "US Politics", href: "categories.html",  active: false },
+    { label: "Science",     href: "categories.html",  active: false },
+    { label: "Fact-Check",  href: "categories.html",  active: false },
+  ],
+
+  /* --------------------------------------------------------
+     🔴 TICKER BAR
+     Scrolling strip at the top. Set breaking: true for red text.
+  -------------------------------------------------------- */
+  ticker: [
+    { text: "BREAKING — Peru's Congress votes on civil union bill for the third time this session", breaking: true },
+    { text: "US Supreme Court hears arguments on transgender healthcare protections", breaking: false },
+    { text: "New study links androgen receptor variants to gender identity markers — Refract analysis incoming", breaking: false },
+    { text: "Lima mayor announces public health reforms — LGBTQ+ clinics excluded from funding", breaking: false },
+  ],
+
+  /* --------------------------------------------------------
+     🗂️ CATEGORIES
+     Each category has:
+       name        — display name
+       id          — used for the URL anchor (no spaces)
+       color       — sage | slate | amber | terra
+       icon        — emoji
+       description — short description shown under the title
+       articles    — list of articles in this category
+     
+     TO ADD AN ARTICLE, copy this block into the articles array:
+     {
+       headline: "Your headline here",
+       deck:     "A one or two sentence summary.",
+       date:     "Mar 10, 2026",
+       link:     "article.html",         ← filename of the article
+       verdict:  null,                   ← null | "confirmed" | "false" | "misleading"
+     },
+     
+     TO ADD A NEW CATEGORY, copy an entire category block below
+     and add it to the array.
+  -------------------------------------------------------- */
+  categories: [
+
+    /* ── LGBTQ+ RIGHTS ─────────────────────────────────── */
+    {
+      name:        "LGBTQ+ Rights",
+      id:          "lgbtq",
+      color:       "sage",
+      icon:        "🏳️‍🌈",
+      description: "Legal developments, healthcare access, science, and community stories. The beat no major Peruvian outlet covers with rigour.",
+      articles: [
+        {
+          headline: "Peru's civil union bill fails again — and the science lawmakers ignored",
+          deck:     "For the third consecutive session, Congress rejected recognition of same-sex partnerships. We read the committee report, the dissenting votes, and the neurobiological research that no legislator cited.",
+          date:     "Mar 5, 2026",
+          link:     "article.html",
+          verdict:  null,
+        },
+        // ➕ Add your next LGBTQ+ article here ↓
+      ],
+    },
+
+    /* ── PERU & LATIN AMERICA ───────────────────────────── */
+    {
+      name:        "Peru & Latin America",
+      id:          "peru",
+      color:       "terra",
+      icon:        "🇵🇪",
+      description: "Political developments, LGBTQ+ legislation, healthcare policy, and stories that don't reach international media.",
+      articles: [
+        // ➕ Add your first Peru article here ↓
+      ],
+    },
+
+    /* ── US POLITICS ────────────────────────────────────── */
+    {
+      name:        "US Politics & Policy",
+      id:          "uspolitics",
+      color:       "slate",
+      icon:        "🌐",
+      description: "Fact-checked breakdowns of US political news for a global audience. Focus on policy impact over political drama.",
+      articles: [
+        // ➕ Add your first US Politics article here ↓
+      ],
+    },
+
+    /* ── SCIENCE ────────────────────────────────────────── */
+    {
+      name:        "Science & Research",
+      id:          "science",
+      color:       "amber",
+      icon:        "🔬",
+      description: "Explaining research, debunking viral misinformation, and teaching audiences how to verify information themselves.",
+      articles: [
+        // ➕ Add your first Science article here ↓
+      ],
+    },
+
+    /* ── FACT-CHECK ─────────────────────────────────────── */
+    {
+      name:        "Fact-Check",
+      id:          "factcheck",
+      color:       "amber",
+      icon:        "✅",
+      description: "Every claim verified. Every source shown. We rate claims as Confirmed, Misleading, or False — and show our work.",
+      articles: [
+        // ➕ Add your first Fact-Check article here ↓
+      ],
+    },
+
+  ],
+
+  /* --------------------------------------------------------
+     🔗 FOOTER
+  -------------------------------------------------------- */
+  footer: {
+    tagline:     "Split the light.",
+    description: "Fact-checked journalism on US politics, Peruvian affairs, and LGBTQ+ rights — built for young people who are tired of being misled.",
+    copyright:   "© 2026 Refract · Lima, Peru · All rights reserved",
+    instagram:   "https://instagram.com/refractmedia",
+    tiktok:      "https://tiktok.com/@refractmedia",
+  },
+
+};
+/* ============================================================
+   END OF EDITABLE CONTENT — do not edit below this line
+============================================================ */
+</script>
+
+<style>
+:root{--black:#0A0A0A;--off-black:#111111;--surface:#161616;--surface-2:#1E1E1E;--border:#2A2A2A;--muted:#555555;--subtle:#888888;--body:#C8C8C8;--white:#F0EDE8;--amber:#E8D5B0;--sage:#7B9E8F;--terra:#C17B6B;--slate:#6B7FA3;--spec:linear-gradient(90deg,#E8D5B0,#7B9E8F,#6B7FA3,#C17B6B);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--body);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+.ticker-wrap{background:var(--surface);border-bottom:1px solid var(--border);overflow:hidden;padding:8px 0;}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 40s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-item{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--subtle);padding:0 32px;display:inline-flex;align-items:center;gap:12px;}
+.ticker-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.ticker-item.breaking::before{background:var(--terra);}.ticker-item.breaking{color:var(--terra);}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.masthead{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);}
+.masthead-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;height:72px;}
+.nav-left{display:flex;gap:28px;align-items:center;}
+.nav-link{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--white);}
+.wordmark{text-align:center;}.wordmark-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--white);letter-spacing:-.04em;display:block;}
+.wordmark-rule{height:1px;background:var(--spec);margin:3px 0 2px;opacity:.7;}
+.wordmark-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:9px;color:var(--muted);letter-spacing:1px;display:block;}
+.nav-right{display:flex;gap:20px;align-items:center;justify-content:flex-end;}
+.subscribe-btn{background:var(--white);color:var(--black);padding:7px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;cursor:pointer;border:none;font-weight:500;}
+
+/* PAGE HERO */
+.page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);max-width:1400px;margin:0 auto;}
+.page-hero-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;}
+.page-hero-title{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);font-weight:900;color:var(--white);line-height:1;letter-spacing:-.03em;margin-bottom:20px;}
+.page-hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2vw,22px);color:var(--subtle);max-width:580px;line-height:1.5;}
+
+/* CATEGORY JUMP NAV */
+.cat-jump{border-bottom:1px solid var(--border);background:var(--surface);}
+.cat-jump-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;gap:0;overflow-x:auto;}
+.cat-jump-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);padding:16px 20px;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;}
+.cat-jump-link:hover{color:var(--white);}
+.cat-jump-link.sage{border-color:var(--sage);color:var(--sage);}
+.cat-jump-link.terra{border-color:var(--terra);color:var(--terra);}
+.cat-jump-link.slate{border-color:var(--slate);color:var(--slate);}
+.cat-jump-link.amber{border-color:var(--amber);color:var(--amber);}
+
+/* CATEGORY SECTION */
+.cat-section{max-width:1400px;margin:0 auto;padding:0 40px 72px;}
+.cat-header{display:flex;align-items:flex-start;gap:24px;padding:56px 0 32px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.cat-header-accent{width:3px;flex-shrink:0;margin-top:6px;border-radius:2px;align-self:stretch;}
+.cat-header-accent.sage{background:var(--sage);}
+.cat-header-accent.terra{background:var(--terra);}
+.cat-header-accent.slate{background:var(--slate);}
+.cat-header-accent.amber{background:var(--amber);}
+.cat-icon{font-size:36px;line-height:1;margin-right:4px;}
+.cat-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:8px;}
+.cat-desc{font-size:14px;color:var(--subtle);line-height:1.6;font-weight:300;max-width:540px;}
+.cat-count{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.18em;margin-top:8px;}
+
+/* ARTICLE GRID */
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.article-card{background:var(--surface);padding:28px;cursor:pointer;transition:background .2s;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;}
+.article-card:hover{background:var(--surface-2);}
+.card-category{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;}
+.card-category.sage{color:var(--sage);}.card-category.terra{color:var(--terra);}.card-category.slate{color:var(--slate);}.card-category.amber{color:var(--amber);}
+.card-headline{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);line-height:1.25;letter-spacing:-.01em;}
+.card-deck{font-size:13px;color:var(--subtle);line-height:1.55;font-weight:300;flex:1;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border);margin-top:auto;}
+.card-date{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.1em;}
+.card-read{font-family:'DM Mono',monospace;font-size:9px;color:var(--amber);letter-spacing:.1em;}
+.verdict{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border:1px solid;}
+.verdict.confirmed{color:var(--sage);border-color:var(--sage);}.verdict.false{color:var(--terra);border-color:var(--terra);}.verdict.misleading{color:var(--amber);border-color:var(--amber);}
+.verdict::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;}
+
+/* EMPTY STATE */
+.empty-state{background:var(--surface);border:1px solid var(--border);border-style:dashed;padding:56px 40px;text-align:center;}
+.empty-icon{font-size:32px;margin-bottom:16px;opacity:.4;}
+.empty-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--subtle);margin-bottom:8px;}
+.empty-sub{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;line-height:1.8;}
+
+/* SECTION DIVIDER */
+.cat-divider{height:1px;background:var(--border);max-width:1400px;margin:0 auto;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:48px 40px;}
+.footer-inner{max-width:1400px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.footer-wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--white);letter-spacing:-.03em;display:block;margin-bottom:4px;}
+.footer-rule{height:1px;background:var(--spec);margin-bottom:6px;opacity:.6;width:120px;}
+.footer-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:10px;color:var(--muted);}
+.footer-desc{font-size:13px;color:var(--subtle);margin-top:16px;line-height:1.6;max-width:260px;font-weight:300;}
+.footer-col-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;color:var(--subtle);cursor:pointer;}.footer-link:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
+.footer-social{display:flex;gap:16px;}
+.social-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;cursor:pointer;}.social-link:hover{color:var(--amber);}
+@media(max-width:900px){.article-grid{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr 1fr;}.masthead-inner{grid-template-columns:auto 1fr auto;}.nav-left{display:none;}}
+@media(max-width:600px){.article-grid{grid-template-columns:1fr;}.page-hero,.cat-section{padding-left:20px;padding-right:20px;}footer{padding:40px 20px;}.cat-jump-inner{padding:0 20px;}}
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap"><div class="ticker-inner" id="r-ticker"></div></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <nav class="nav-left" id="r-nav"></nav>
+    <div class="wordmark">
+      <a href="index.html">
+        <span class="wordmark-text">Refract</span>
+        <div class="wordmark-rule"></div>
+        <span class="wordmark-tag">Split the light.</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="subscribe-btn" onclick="window.location.href='index.html#newsletter'">Subscribe</button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">Browse by Category</div>
+  <div class="page-hero-title">All Coverage</div>
+  <div class="page-hero-sub">Every story Refract has published, organised by beat. Use the jump links below to go directly to a category.</div>
+</div>
+
+<!-- CATEGORY JUMP NAV -->
+<div class="cat-jump">
+  <div class="cat-jump-inner" id="r-jump-nav"></div>
+</div>
+
+<!-- CATEGORY SECTIONS -->
+<div id="r-categories"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-wordmark">Refract</span>
+        <div class="footer-rule"></div>
+        <span class="footer-tag" id="r-ft-tag"></span>
+        <p class="footer-desc" id="r-ft-desc"></p>
+      </div>
+      <div>
+        <div class="footer-col-title">Beats</div>
+        <div class="footer-links">
+          <span class="footer-link">LGBTQ+ Rights</span>
+          <span class="footer-link">Peru & Latin America</span>
+          <span class="footer-link">US Politics</span>
+          <span class="footer-link">Science</span>
+          <span class="footer-link">Fact-Check Archive</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">About</div>
+        <div class="footer-links">
+          <span class="footer-link">Our Mission</span>
+          <span class="footer-link">Editorial Standards</span>
+          <span class="footer-link">Corrections Policy</span>
+          <span class="footer-link">Contact</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Follow</div>
+        <div class="footer-links">
+          <a class="footer-link" id="r-ft-ig" target="_blank">Instagram</a>
+          <a class="footer-link" id="r-ft-tt" target="_blank">TikTok</a>
+          <span class="footer-link">Newsletter</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" id="r-ft-copy"></span>
+      <div class="footer-social">
+        <span class="social-link">@refract.media</span>
+        <span class="social-link">Privacy</span>
+        <span class="social-link">Terms</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── RENDER ENGINE ─────────────────────────────────────────
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+// Ticker
+const tItems = [...CATEGORIES_PAGE.ticker, ...CATEGORIES_PAGE.ticker];
+document.getElementById('r-ticker').innerHTML = tItems.map(i =>
+  `<span class="ticker-item${i.breaking?' breaking':''}">${i.text}</span>`).join('');
+
+// Nav
+document.getElementById('r-nav').innerHTML = CATEGORIES_PAGE.nav.map(n =>
+  `<a class="nav-link${n.active?' active':''}" href="${n.href}">${n.label}</a>`).join('');
+
+// Jump nav
+document.getElementById('r-jump-nav').innerHTML = CATEGORIES_PAGE.categories.map(c =>
+  `<a class="cat-jump-link ${c.color}" href="#${c.id}">${c.icon} ${c.name}</a>`
+).join('');
+
+// Category sections
+const catsEl = document.getElementById('r-categories');
+CATEGORIES_PAGE.categories.forEach((cat, i) => {
+  const count = cat.articles.length;
+  let articlesHTML = '';
+
+  if (count === 0) {
+    articlesHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">${cat.icon}</div>
+        <div class="empty-title">No articles yet</div>
+        <div class="empty-sub">Articles in this category will appear here.<br>To add one, open categories.html and add an article<br>to the "${cat.name}" section in the CONTENT block at the top.</div>
+      </div>`;
+  } else {
+    articlesHTML = `<div class="article-grid">` +
+      cat.articles.map(a => `
+        <a class="article-card" href="${a.link}">
+          <div class="card-category ${cat.color}">${cat.name}</div>
+          ${a.verdict ? `<div class="verdict ${a.verdict}" style="margin-bottom:8px;">● ${cap(a.verdict)}</div>` : ''}
+          <h2 class="card-headline">${a.headline}</h2>
+          <p class="card-deck">${a.deck}</p>
+          <div class="card-meta">
+            <span class="card-date">${a.date}</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </a>`).join('') +
+    `</div>`;
+  }
+
+  catsEl.innerHTML += `
+    ${i > 0 ? '<div class="cat-divider"></div>' : ''}
+    <div class="cat-section" id="${cat.id}">
+      <div class="cat-header">
+        <div class="cat-header-accent ${cat.color}"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <span class="cat-icon">${cat.icon}</span>
+            <h2 class="cat-title">${cat.name}</h2>
+          </div>
+          <p class="cat-desc">${cat.description}</p>
+          <div class="cat-count">${count === 0 ? 'No articles yet' : count + ' article' + (count !== 1 ? 's' : '')}</div>
+        </div>
+      </div>
+      ${articlesHTML}
+    </div>`;
+});
+
+// Footer
+document.getElementById('r-ft-tag').textContent = CATEGORIES_PAGE.footer.tagline;
+document.getElementById('r-ft-desc').textContent = CATEGORIES_PAGE.footer.description;
+document.getElementById('r-ft-copy').textContent = CATEGORIES_PAGE.footer.copyright;
+document.getElementById('r-ft-ig').href = CATEGORIES_PAGE.footer.instagram;
+document.getElementById('r-ft-tt').href = CATEGORIES_PAGE.footer.tiktok;
+</script>
+</body>
+</html>
