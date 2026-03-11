@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGBTQ+ Rights | Refract</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--off-black:#111111;--surface:#161616;--surface-2:#1E1E1E;--border:#2A2A2A;--muted:#555555;--subtle:#888888;--body:#C8C8C8;--white:#F0EDE8;--amber:#E8D5B0;--sage:#7B9E8F;--terra:#C17B6B;--slate:#6B7FA3;--spec:linear-gradient(90deg,#E8D5B0,#7B9E8F,#6B7FA3,#C17B6B);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--body);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+.ticker-wrap{background:var(--surface);border-bottom:1px solid var(--border);overflow:hidden;padding:8px 0;}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 40s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-item{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--subtle);padding:0 32px;display:inline-flex;align-items:center;gap:12px;flex-shrink:0;}
+.ticker-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.ticker-item.breaking{color:var(--terra);}.ticker-item.breaking::before{background:var(--terra);}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.masthead{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);}
+.masthead-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;height:72px;}
+.nav-left{display:flex;gap:28px;align-items:center;}
+.nav-link{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);transition:color .2s;}
+.nav-link:hover{color:var(--white);}
+.nav-link.active{color:var(--white);border-bottom:1px solid var(--amber);padding-bottom:2px;}
+.wordmark{text-align:center;}
+.wordmark-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--white);letter-spacing:-.04em;display:block;}
+.wordmark-rule{height:1px;background:var(--spec);margin:3px 0 2px;opacity:.7;}
+.wordmark-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:9px;color:var(--muted);letter-spacing:1px;display:block;}
+.nav-right{display:flex;gap:20px;align-items:center;justify-content:flex-end;}
+.subscribe-btn{background:var(--white);color:var(--black);padding:7px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;cursor:pointer;border:none;font-weight:500;text-decoration:none;display:inline-block;}
+.subscribe-btn:hover{background:var(--amber);}
+.page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);max-width:1400px;margin:0 auto;}
+.page-hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:20px;}
+.page-hero-title{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,88px);font-weight:900;color:var(--white);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;}
+.page-hero-desc{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2vw,22px);color:var(--subtle);max-width:600px;line-height:1.55;}
+.page-hero-accent{width:60px;height:3px;border-radius:2px;margin-bottom:28px;}
+.container{max-width:1400px;margin:0 auto;padding:0 40px;}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-top:56px;}
+.section-header-line{flex:1;height:1px;background:var(--border);}
+.section-header-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.section-header-accent{width:24px;height:1px;}
+.section-header-accent.amber{background:var(--amber);}.section-header-accent.sage{background:var(--sage);}.section-header-accent.slate{background:var(--slate);}.section-header-accent.terra{background:var(--terra);}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.article-grid.two-col{grid-template-columns:repeat(2,1fr);}
+.article-card{background:var(--surface);padding:28px;transition:background .2s;display:flex;flex-direction:column;gap:12px;}
+.article-card:hover{background:var(--surface-2);}
+.card-category{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;}
+.card-category.sage{color:var(--sage);}.card-category.terra{color:var(--terra);}.card-category.slate{color:var(--slate);}.card-category.amber{color:var(--amber);}
+.card-headline{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-.01em;}
+.card-deck{font-size:13px;color:var(--subtle);line-height:1.55;font-weight:300;flex:1;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border);margin-top:auto;}
+.card-date{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.1em;}
+.card-read{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;}
+.card-read.sage{color:var(--sage);}.card-read.terra{color:var(--terra);}.card-read.slate{color:var(--slate);}.card-read.amber{color:var(--amber);}
+.empty-card{background:var(--surface);padding:40px 28px;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-height:220px;}
+.empty-card-icon{font-size:28px;opacity:.3;}
+.empty-card-text{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);line-height:1.8;}
+.verdict-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border:1px solid;}
+.verdict-tag.confirmed{color:var(--sage);border-color:var(--sage);}.verdict-tag.false{color:var(--terra);border-color:var(--terra);}.verdict-tag.misleading{color:var(--amber);border-color:var(--amber);}
+.verdict-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;}
+footer{border-top:1px solid var(--border);padding:48px 40px;}
+.footer-inner{max-width:1400px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.footer-wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--white);letter-spacing:-.03em;display:block;margin-bottom:4px;}
+.footer-rule{height:1px;background:var(--spec);margin-bottom:6px;opacity:.6;width:120px;}
+.footer-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:10px;color:var(--muted);display:block;}
+.footer-desc{font-size:13px;color:var(--subtle);margin-top:16px;line-height:1.6;max-width:260px;font-weight:300;}
+.footer-col-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;color:var(--subtle);cursor:pointer;transition:color .2s;}.footer-link:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
+.footer-social{display:flex;gap:16px;}
+.social-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;transition:color .2s;}.social-link:hover{color:var(--amber);}
+@media(max-width:900px){.article-grid,.article-grid.two-col{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr 1fr;}.masthead-inner{grid-template-columns:auto 1fr auto;}.nav-left{display:none;}}
+@media(max-width:600px){.article-grid,.article-grid.two-col{grid-template-columns:1fr;}.container,.page-hero{padding-left:20px;padding-right:20px;}footer{padding:40px 20px;}}
+
+/* SUPPORT BANNER */
+.support-banner{background:linear-gradient(135deg,rgba(123,158,143,.12),rgba(107,127,163,.08));border-top:1px solid rgba(123,158,143,.25);border-bottom:1px solid rgba(123,158,143,.15);padding:20px 40px;}
+.support-banner-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.support-banner-icon{font-size:20px;flex-shrink:0;}
+.support-banner-text{font-size:13px;color:var(--subtle);flex:1;line-height:1.5;}
+.support-banner-text strong{color:var(--body);}
+.support-banner-links{display:flex;gap:12px;flex-wrap:wrap;}
+.support-banner-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);border:1px solid rgba(123,158,143,.4);padding:6px 12px;transition:all .2s;white-space:nowrap;}
+.support-banner-link:hover{background:var(--sage);color:var(--black);}
+/* SIDEBAR WIDGET */
+.page-layout{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;padding-bottom:80px;}
+.support-sidebar{padding-top:56px;position:sticky;top:88px;}
+.sidebar-widget{background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--sage);}
+.sidebar-widget-header{padding:20px 24px;border-bottom:1px solid var(--border);}
+.sidebar-widget-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.sidebar-widget-sub{font-size:12px;color:var(--muted);}
+.sidebar-widget-body{padding:20px 24px;display:flex;flex-direction:column;gap:16px;}
+.sidebar-org{display:flex;flex-direction:column;gap:4px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.sidebar-org:last-child{border-bottom:none;padding-bottom:0;}
+.sidebar-org-name{font-size:13px;font-weight:600;color:var(--white);}
+.sidebar-org-detail{font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.sidebar-org-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-top:4px;display:inline-block;}
+.sidebar-org-link:hover{text-decoration:underline;}
+.sidebar-cta{display:block;background:rgba(123,158,143,.1);border:1px solid rgba(123,158,143,.25);padding:12px 16px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin:0 24px 24px;transition:all .2s;}
+.sidebar-cta:hover{background:var(--sage);color:var(--black);}
+@media(max-width:1024px){.page-layout{grid-template-columns:1fr;}.support-sidebar{position:static;padding-top:0;}.support-banner{padding-left:20px;padding-right:20px;}}
+
+/* SUPPORT POPUP */
+.support-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.support-popup-overlay.open{opacity:1;pointer-events:all;}
+.support-popup{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--sage);max-width:560px;width:100%;position:relative;transform:translateY(20px);transition:transform .3s ease;max-height:90vh;overflow-y:auto;}
+.support-popup-overlay.open .support-popup{transform:translateY(0);}
+.popup-header{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.popup-header-left{}
+.popup-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+.popup-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--white);line-height:1.1;}
+.popup-close{background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;padding:0;line-height:1;flex-shrink:0;transition:color .2s;margin-top:-4px;}
+.popup-close:hover{color:var(--white);}
+.popup-crisis{background:rgba(193,123,107,.1);border:1px solid rgba(193,123,107,.25);margin:20px 32px 0;padding:14px 18px;display:flex;align-items:center;gap:12px;}
+.popup-crisis-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);flex-shrink:0;animation:pulse 2s ease-in-out infinite;}
+.popup-crisis-text{font-size:12px;color:var(--body);line-height:1.5;}
+.popup-crisis-text strong{color:var(--white);}
+.popup-orgs{padding:20px 32px;display:flex;flex-direction:column;gap:0;border-bottom:1px solid var(--border);}
+.popup-org{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);gap:16px;}
+.popup-org:last-child{border-bottom:none;}
+.popup-org-info{}
+.popup-org-name{font-size:14px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.popup-org-detail{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.05em;}
+.popup-org-btn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);border:1px solid rgba(123,158,143,.35);padding:7px 12px;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.popup-org-btn:hover{background:var(--sage);color:var(--black);}
+.popup-footer{padding:20px 32px;display:flex;gap:12px;align-items:center;}
+.popup-full-link{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);border:1px solid var(--sage);padding:10px 16px;transition:all .2s;}
+.popup-full-link:hover{background:var(--sage);color:var(--black);}
+.popup-dismiss{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;transition:color .2s;}
+.popup-dismiss:hover{color:var(--white);}
+/* TRIGGER BUTTON — floating */
+.support-trigger{position:fixed;bottom:28px;right:28px;z-index:500;background:var(--sage);color:var(--black);border:none;padding:12px 20px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(123,158,143,.3);transition:all .2s;}
+.support-trigger:hover{background:var(--white);}
+.support-trigger-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);animation:pulse 2s ease-in-out infinite;}
+
+/* ── SUPPORT POPUP ─────────────────────────────────────────── */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:9999;display:flex;align-items:flex-end;justify-content:flex-end;padding:32px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.popup-overlay.visible{opacity:1;pointer-events:all;}
+.popup-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--sage);width:340px;max-width:100%;transform:translateY(20px);transition:transform .3s ease;position:relative;}
+.popup-overlay.visible .popup-card{transform:translateY(0);}
+.popup-close{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;line-height:1;padding:4px;transition:color .2s;}
+.popup-close:hover{color:var(--white);}
+.popup-header{padding:24px 24px 16px;}
+.popup-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.popup-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-.01em;}
+.popup-sub{font-size:12px;color:var(--subtle);margin-top:6px;line-height:1.5;}
+.popup-body{padding:0 24px 16px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--border);padding-top:16px;}
+.popup-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(42,42,42,.5);}
+.popup-row:last-child{border-bottom:none;}
+.popup-row-icon{font-size:16px;flex-shrink:0;width:24px;text-align:center;}
+.popup-row-content{flex:1;}
+.popup-row-name{font-size:12px;font-weight:600;color:var(--white);}
+.popup-row-contact{font-family:'DM Mono',monospace;font-size:10px;color:var(--sage);letter-spacing:.04em;}
+.popup-cta{display:block;background:rgba(123,158,143,.1);border:1px solid rgba(123,158,143,.3);margin:0 24px 24px;padding:12px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);transition:all .2s;}
+.popup-cta:hover{background:var(--sage);color:var(--black);}
+.popup-dismiss{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;padding-bottom:16px;cursor:pointer;transition:color .2s;}
+.popup-dismiss:hover{color:var(--subtle);}
+/* Trigger button — fixed bottom-left */
+.popup-trigger{position:fixed;bottom:28px;left:28px;z-index:9000;background:var(--surface);border:1px solid rgba(123,158,143,.4);padding:10px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;transition:all .2s;border-left:3px solid var(--sage);}
+.popup-trigger:hover{background:var(--surface-2);border-color:var(--sage);}
+.popup-trigger-icon{font-size:14px;}
+.popup-trigger-text{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);}
+@media(max-width:600px){.popup-overlay{padding:16px;align-items:flex-end;justify-content:center;}.popup-card{width:100%;}.popup-trigger{bottom:16px;left:16px;}}
+
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap"><div class="ticker-inner">
+  <span class="ticker-item breaking">BREAKING — Peru's Congress votes on civil union bill for the third time this session</span>
+  <span class="ticker-item">US Supreme Court hears arguments on transgender healthcare protections</span>
+  <span class="ticker-item">Lima mayor announces public health reforms — LGBTQ+ clinics excluded from funding</span>
+  <span class="ticker-item breaking">BREAKING — Peru's Congress votes on civil union bill for the third time this session</span>
+  <span class="ticker-item">US Supreme Court hears arguments on transgender healthcare protections</span>
+  <span class="ticker-item">Lima mayor announces public health reforms — LGBTQ+ clinics excluded from funding</span>
+</div></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <nav class="nav-left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="lgbtq.html">LGBTQ+</a>
+      <a class="nav-link" href="peru.html">Peru</a>
+      <a class="nav-link" href="uspolitics.html">US Politics</a>
+      <a class="nav-link" href="science.html">Science</a>
+      <a class="nav-link" href="factcheck.html">Fact-Check</a>
+      <a class="nav-link" href="apoyo.html" style="color:var(--sage);border-bottom:1px solid var(--sage);padding-bottom:2px;">Support</a>
+    </nav>
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-text">Refract</span>
+      <div class="wordmark-rule"></div>
+      <span class="wordmark-tag">Split the light.</span>
+    </a>
+    <div class="nav-right">
+      <a class="subscribe-btn" href="index.html#newsletter">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow" style="color:var(--sage)">🏳️‍🌈 LGBTQ+ Rights</div>
+  <div class="page-hero-accent" style="background:var(--sage)"></div>
+  <h1 class="page-hero-title">LGBTQ+ Rights</h1>
+  <p class="page-hero-desc">Legal developments, healthcare access, neuroscience, and community stories. The beat no major Peruvian outlet covers with rigour — fact-checked, sourced, and explained plainly.</p>
+</div>
+
+<!-- SUPPORT BANNER -->
+<div class="support-banner">
+  <div class="support-banner-inner">
+    <span class="support-banner-icon">🏳️‍🌈</span>
+    <div class="support-banner-text"><strong>Need support?</strong> LGBTQ+ Peruvians can access free legal help, affirming mental health care, and direct community support through the organisations below.</div>
+    <div class="support-banner-links">
+      <a class="support-banner-link" href="https://wa.me/51938625775" target="_blank">MHOL WhatsApp</a>
+      <a class="support-banner-link" href="https://promsex.org" target="_blank">PROMSEX</a>
+      <a class="support-banner-link" href="apoyo.html">All resources →</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-layout">
+  <div><!-- article grid column -->
+
+  <div class="section-header">
+    <div class="section-header-accent sage"></div>
+    <span class="section-header-title">All Articles</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="article-grid">
+    <!-- ✅ REAL ARTICLE — do not remove -->
+    <a class="article-card" href="article.html" style="text-decoration:none;color:inherit;">
+      <div class="card-category sage">Breaking · LGBTQ+</div>
+      <h2 class="card-headline">Peru's civil union bill fails again — and the science lawmakers ignored</h2>
+      <p class="card-deck">For the third consecutive session, Congress rejected recognition of same-sex partnerships. We read the committee report, the dissenting votes, and the neurobiological research no legislator cited.</p>
+      <div class="card-meta">
+        <span class="card-date">Mar 5, 2026</span>
+        <span class="card-read sage">Read →</span>
+      </div>
+    </a>
+        <div class="empty-card">
+      <div class="empty-card-icon">✍️</div>
+      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
+    </div>
+        <div class="empty-card">
+      <div class="empty-card-icon">✍️</div>
+      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
+    </div>
+        <div class="empty-card">
+      <div class="empty-card-icon">✍️</div>
+      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
+    </div>
+        <div class="empty-card">
+      <div class="empty-card-icon">✍️</div>
+      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
+    </div>
+        <div class="empty-card">
+      <div class="empty-card-icon">✍️</div>
+      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
+    </div>
+  </div>
+</div><!-- end article column -->
+
+  <!-- SIDEBAR -->
+  <div class="support-sidebar">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-header">
+        <div class="sidebar-widget-title">🏳️‍🌈 Need Help?</div>
+        <div class="sidebar-widget-sub">Real support for LGBTQ+ people in Peru</div>
+      </div>
+      <div class="sidebar-widget-body">
+        <div class="sidebar-org">
+          <div class="sidebar-org-name">PROMSEX</div>
+          <div class="sidebar-org-detail">Legal rights · Pro-bono support</div>
+          <div class="sidebar-org-detail">(01) 447-8668</div>
+          <a class="sidebar-org-link" href="https://promsex.org" target="_blank">promsex.org →</a>
+        </div>
+        <div class="sidebar-org">
+          <div class="sidebar-org-name">MHOL</div>
+          <div class="sidebar-org-detail">Community support since 1982</div>
+          <div class="sidebar-org-detail">+51 938 625 775 (WhatsApp)</div>
+          <a class="sidebar-org-link" href="https://wa.me/51938625775" target="_blank">Message MHOL →</a>
+        </div>
+        <div class="sidebar-org">
+          <div class="sidebar-org-name">Más Igualdad — RESMA</div>
+          <div class="sidebar-org-detail">Affirming therapy directory</div>
+          <a class="sidebar-org-link" href="https://www.masigualdad.pe" target="_blank">Find a therapist →</a>
+        </div>
+        <div class="sidebar-org">
+          <div class="sidebar-org-name">Crisis line — MINSA</div>
+          <div class="sidebar-org-detail">Call 113, press option 5</div>
+          <div class="sidebar-org-detail">Free · Confidential · Nationwide</div>
+        </div>
+      </div>
+      <a class="sidebar-cta" href="apoyo.html">Full resources page →</a>
+    </div>
+  </div>
+
+  </div><!-- end page-layout grid -->
+</div><!-- end container -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html"><span class="footer-wordmark">Refract</span></a>
+        <div class="footer-rule"></div>
+        <span class="footer-tag">Split the light.</span>
+        <p class="footer-desc">Fact-checked journalism on US politics, Peruvian affairs, and LGBTQ+ rights — built for young people who are tired of being misled.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Beats</div>
+        <div class="footer-links">
+          <a class="footer-link" href="lgbtq.html">LGBTQ+ Rights</a>
+          <a class="footer-link" href="peru.html">Peru &amp; Latin America</a>
+          <a class="footer-link" href="uspolitics.html">US Politics</a>
+          <a class="footer-link" href="science.html">Science</a>
+          <a class="footer-link" href="factcheck.html">Fact-Check Archive</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">About</div>
+        <div class="footer-links">
+          <span class="footer-link">Our Mission</span>
+          <span class="footer-link">Editorial Standards</span>
+          <span class="footer-link">Corrections Policy</span>
+          <span class="footer-link">Contact</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Follow</div>
+        <div class="footer-links">
+          <a class="footer-link" href="https://instagram.com/refractmedia" target="_blank">Instagram</a>
+          <a class="footer-link" href="https://tiktok.com/@refractmedia" target="_blank">TikTok</a>
+          <a class="footer-link" href="index.html#newsletter">Newsletter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Refract · Lima, Peru · All rights reserved</span>
+      <div class="footer-social">
+        <span class="social-link">@refract.media</span>
+        <span class="social-link">Privacy</span>
+        <span class="social-link">Terms</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SUPPORT POPUP ──────────────────────────────────────── -->
+<!-- Trigger button -->
+<button class="popup-trigger" onclick="document.getElementById('supportPopup').classList.add('visible')" aria-label="Open support resources">
+  <span class="popup-trigger-icon">🏳️‍🌈</span>
+  <span class="popup-trigger-text">Need help?</span>
+</button>
+
+<!-- Popup overlay -->
+<div class="popup-overlay" id="supportPopup" role="dialog" aria-modal="true" aria-label="LGBTQ+ Support Resources">
+  <div class="popup-card">
+    <button class="popup-close" onclick="document.getElementById('supportPopup').classList.remove('visible')" aria-label="Close">✕</button>
+    <div class="popup-header">
+      <div class="popup-eyebrow">🏳️‍🌈 LGBTQ+ Support in Peru</div>
+      <div class="popup-title">You are not alone.</div>
+      <div class="popup-sub">Free, confidential support from organisations that actually help.</div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-row">
+        <span class="popup-row-icon">📞</span>
+        <div class="popup-row-content">
+          <div class="popup-row-name">Crisis Line — MINSA</div>
+          <div class="popup-row-contact">Call 113 → press option 5</div>
+        </div>
+      </div>
+      <div class="popup-row">
+        <span class="popup-row-icon">💬</span>
+        <div class="popup-row-content">
+          <div class="popup-row-name">MHOL — Community Support</div>
+          <a class="popup-row-contact" href="https://wa.me/51938625775" target="_blank">+51 938 625 775 (WhatsApp)</a>
+        </div>
+      </div>
+      <div class="popup-row">
+        <span class="popup-row-icon">⚖️</span>
+        <div class="popup-row-content">
+          <div class="popup-row-name">PROMSEX — Legal Help</div>
+          <a class="popup-row-contact" href="https://promsex.org" target="_blank">promsex.org · (01) 447-8668</a>
+        </div>
+      </div>
+      <div class="popup-row">
+        <span class="popup-row-icon">🧘</span>
+        <div class="popup-row-content">
+          <div class="popup-row-name">RESMA — Affirming Therapists</div>
+          <a class="popup-row-contact" href="https://www.masigualdad.pe" target="_blank">masigualdad.pe</a>
+        </div>
+      </div>
+    </div>
+    <a class="popup-cta" href="apoyo.html">Full resources & guides →</a>
+    <span class="popup-dismiss" onclick="dismissPopup()">Don't show again this session</span>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Auto-show after 8 seconds if not dismissed
+  if (!sessionStorage.getItem('refract_support_dismissed')) {
+    setTimeout(function() {
+      var overlay = document.getElementById('supportPopup');
+      if (overlay) overlay.classList.add('visible');
+    }, 8000);
+  }
+})();
+function dismissPopup() {
+  sessionStorage.setItem('refract_support_dismissed', '1');
+  document.getElementById('supportPopup').classList.remove('visible');
+}
+// Close on overlay click
+document.getElementById('supportPopup').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('visible');
+});
+</script>
+
+</body>
+</html>
