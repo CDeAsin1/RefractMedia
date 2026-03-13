@@ -185,17 +185,33 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 .support-trigger-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);animation:pulse 2s ease-in-out infinite;}
 </style>
 </head>
-<!-- Google Translate Widget -->
-<div id="google_translate_element" style="position:fixed;bottom:80px;right:28px;z-index:999;"></div>
+<!-- REFRACT TRANSLATE BUTTON — paste before </body> -->
+<div id="google_translate_element" style="display:none"></div>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'en',
-    includedLanguages:'es,en',
-    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
-  },'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,en'},'google_translate_element');
 }
+(function(){
+  function getLang(){
+    var m=document.cookie.match(/googtrans=\/en\/([a-z]+)/);
+    return m?m[1]:'en';
+  }
+  function setLang(lang){
+    var d=new Date();d.setFullYear(d.getFullYear()+1);
+    document.cookie='googtrans=/en/'+lang+'; expires='+d.toUTCString()+'; path=/';
+    document.cookie='googtrans=/en/'+lang+'; expires='+d.toUTCString()+'; path=/; domain=.'+location.hostname;
+    location.reload();
+  }
+  window.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('refract-translate-btn');
+    if(!btn)return;
+    var lang=getLang();
+    btn.textContent=lang==='es'?'EN':'ES';
+    btn.title=lang==='es'?'Switch to English':'Cambiar a Español';
+    btn.addEventListener('click',function(){setLang(lang==='es'?'en':'es');});
+  });
+})();
 </script>     
 <body>
 
@@ -231,6 +247,7 @@ function googleTranslateElementInit(){
       <span class="wordmark-tag">Split the light.</span>
     </div>
     <div class="nav-right">
+      <button id="refract-translate-btn" style="background:none;border:1px solid #2A2A2A;color:#888;padding:7px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#888';this.style.color='#F0EDE8'" onmouseout="this.style.borderColor='#2A2A2A';this.style.color='#888'">ES</button>
       <a class="subscribe-btn" href="#newsletter">Subscribe</a>
     </div>
   </div>
