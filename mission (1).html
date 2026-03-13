@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Mission | Refract</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--surface:#161616;--surface-2:#1E1E1E;--border:#2A2A2A;--muted:#555;--subtle:#888;--body:#C8C8C8;--white:#F0EDE8;--amber:#E8D5B0;--sage:#7B9E8F;--terra:#C17B6B;--slate:#6B7FA3;--spec:linear-gradient(90deg,#E8D5B0,#7B9E8F,#6B7FA3,#C17B6B);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--body);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+.masthead{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);}
+.masthead-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;height:72px;}
+.nav-left{display:flex;gap:28px;align-items:center;}
+.nav-link{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);transition:color .2s;}
+.nav-link:hover{color:var(--white);}
+.wordmark-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--white);letter-spacing:-.04em;display:block;text-align:center;}
+.wordmark-rule{height:1px;background:var(--spec);margin:3px 0 2px;opacity:.7;}
+.wordmark-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:9px;color:var(--muted);letter-spacing:1px;display:block;text-align:center;}
+.nav-right{display:flex;justify-content:flex-end;}
+.subscribe-btn{background:var(--white);color:var(--black);padding:7px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;display:inline-block;font-weight:500;}
+.subscribe-btn:hover{background:var(--amber);}
+
+/* HERO */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.hero{padding:96px 72px 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;max-width:1400px;margin:0 auto;}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:700px;height:700px;background:conic-gradient(from 0deg,#E8D5B020,#7B9E8F15,#C17B6B10,#6B7FA318,#E8D5B020);border-radius:50%;filter:blur(100px);animation:rotate 25s linear infinite;pointer-events:none;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:24px;animation:fadeUp .7s ease forwards .1s;opacity:0;position:relative;z-index:1;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(56px,8vw,104px);font-weight:900;color:var(--white);line-height:.9;letter-spacing:-.03em;margin-bottom:32px;animation:fadeUp .7s ease forwards .3s;opacity:0;position:relative;z-index:1;}
+.hero-title em{font-style:italic;background:linear-gradient(135deg,var(--amber),var(--sage));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-deck{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.2vw,26px);color:var(--subtle);max-width:600px;line-height:1.55;animation:fadeUp .7s ease forwards .5s;opacity:0;position:relative;z-index:1;}
+
+/* LAYOUT */
+.page-body{max-width:1400px;margin:0 auto;padding:0 72px 100px;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start;}
+.main-col{padding-top:64px;}
+.sidebar-col{padding-top:64px;position:sticky;top:88px;}
+
+/* STORY */
+.story-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.story-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.story-text{font-size:16px;color:var(--subtle);line-height:1.85;margin-bottom:24px;}
+.story-text strong{color:var(--body);}
+.story-text em{font-style:italic;color:var(--white);}
+.pull-quote{border-left:3px solid var(--amber);padding:24px 32px;margin:40px 0;background:rgba(232,213,176,.04);}
+.pull-quote-text{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-style:italic;color:var(--white);line-height:1.45;margin-bottom:12px;}
+.pull-quote-attr{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;}
+.section-break{display:flex;align-items:center;gap:16px;margin:48px 0 36px;}
+.section-break-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);white-space:nowrap;}
+.section-break-line{flex:1;height:1px;background:var(--border);}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:8px;}
+.pillar{background:var(--surface);padding:28px 24px;}
+.pillar-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.18em;margin-bottom:12px;}
+.pillar-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.pillar-desc{font-size:13px;color:var(--subtle);line-height:1.6;}
+
+/* SIDEBAR */
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--amber);margin-bottom:1px;}
+.sidebar-card-header{padding:20px 24px;border-bottom:1px solid var(--border);}
+.sidebar-card-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);}
+.sidebar-card-body{padding:20px 24px;}
+.sidebar-card-body p{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+.sidebar-card-body p:last-child{margin-bottom:0;}
+.sidebar-stat{display:flex;flex-direction:column;gap:4px;padding:12px 0;border-bottom:1px solid var(--border);}
+.sidebar-stat:last-child{border-bottom:none;padding-bottom:0;}
+.sidebar-stat-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--white);line-height:1;}
+.sidebar-stat-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;}
+.sidebar-link{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);border:1px solid rgba(123,158,143,.3);padding:10px 16px;text-align:center;margin:16px 24px 24px;transition:all .2s;}
+.sidebar-link:hover{background:var(--sage);color:var(--black);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:48px 40px;}
+.footer-inner{max-width:1400px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.footer-wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--white);letter-spacing:-.03em;display:block;margin-bottom:4px;}
+.footer-rule{height:1px;background:var(--spec);margin-bottom:6px;opacity:.6;width:120px;}
+.footer-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:10px;color:var(--muted);display:block;}
+.footer-desc{font-size:13px;color:var(--subtle);margin-top:16px;line-height:1.6;max-width:260px;font-weight:300;}
+.footer-col-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;color:var(--subtle);transition:color .2s;cursor:pointer;}.footer-link:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
+.footer-social{display:flex;gap:16px;}
+.social-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em;}.social-link:hover{color:var(--amber);}
+
+/* MODALS */
+.fmodal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+.fmodal-overlay.open{opacity:1;pointer-events:all;}
+.fmodal{background:#161616;border:1px solid #2A2A2A;border-top:2px solid #E8D5B0;max-width:500px;width:100%;padding:40px;position:relative;transform:translateY(16px);transition:transform .25s ease;max-height:90vh;overflow-y:auto;}
+.fmodal-overlay.open .fmodal{transform:translateY(0);}
+.fmodal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#555;font-size:24px;cursor:pointer;line-height:1;transition:color .2s;}.fmodal-close:hover{color:#F0EDE8;}
+.fmodal-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#E8D5B0;margin-bottom:10px;}
+.fmodal-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#F0EDE8;margin-bottom:20px;line-height:1.1;letter-spacing:-.02em;}
+.fmodal-rule{height:1px;background:linear-gradient(90deg,#E8D5B0,#7B9E8F,#6B7FA3,#C17B6B);margin-bottom:24px;opacity:.5;}
+.fmodal-body{font-size:13px;color:#888;line-height:1.8;}
+.fmodal-body p{margin-bottom:14px;}.fmodal-body p:last-child{margin-bottom:0;}
+.fmodal-body a{color:#E8D5B0;border-bottom:1px solid rgba(232,213,176,.3);padding-bottom:1px;}
+.fmodal-body strong{color:#C8C8C8;}
+.fmodal-mono{font-family:'DM Mono',monospace;font-size:10px;color:#555;letter-spacing:.1em;border-top:1px solid #2A2A2A;padding-top:16px;margin-top:16px;}
+
+@media(max-width:1024px){.page-body{grid-template-columns:1fr;padding:0 40px 80px;}.sidebar-col{position:static;}}
+@media(max-width:768px){.hero{padding:64px 24px 56px;}.page-body{padding:0 24px 60px;}.pillars{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}.masthead-inner{grid-template-columns:auto 1fr auto;}.nav-left{display:none;}}
+@media(max-width:500px){footer{padding:40px 20px;}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <nav class="nav-left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="lgbtq.html">LGBTQ+</a>
+      <a class="nav-link" href="peru.html">Peru</a>
+      <a class="nav-link" href="uspolitics.html">US Politics</a>
+      <a class="nav-link" href="science.html">Science</a>
+      <a class="nav-link" href="factcheck.html">Fact-Check</a>
+      <a class="nav-link" href="apoyo.html" style="color:var(--sage);">Support</a>
+    </nav>
+    <a href="index.html">
+      <span class="wordmark-text">Refract</span>
+      <div class="wordmark-rule"></div>
+      <span class="wordmark-tag">Split the light.</span>
+    </a>
+    <div class="nav-right">
+      <a class="subscribe-btn" href="index.html#newsletter">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">🎯 Our Mission & Story</div>
+  <h1 class="hero-title">Why Refract<br><em>exists.</em></h1>
+  <p class="hero-deck">A high school student in Lima, a frustration that kept growing, and a decision to stop waiting for someone else to do it right.</p>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <div class="story-label">The Story</div>
+
+    <p class="story-text">
+      Growing up in Lima, <strong>Cristóbal de Asín</strong> noticed something that bothered him long before he had the words for it. The news — Peruvian news, international news, news shared in group chats and on Instagram — almost always got the stories he cared about <em>wrong.</em> Not necessarily lying. Just... incomplete. Flattened. Stripped of the context that would have made them actually mean something.
+    </p>
+
+    <p class="story-text">
+      The stories he cared about most were the ones about people being left behind. He watched LGBTQ+ classmates and community members navigate hostility — at school, in their neighbourhoods, in their own homes — while the media either ignored it entirely or reduced it to a political football. He read Peruvian coverage of the civil union bill that mentioned the vote but never the people it affected. He read international coverage of Peru that only showed up when something catastrophic happened.
+    </p>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"I didn't want to build another news outlet. I wanted to build the one I needed growing up and couldn't find."</div>
+      <div class="pull-quote-attr">— Cristóbal de Asín, Founder</div>
+    </div>
+
+    <p class="story-text">
+      The frustration wasn't just about the LGBTQ+ coverage — though that was where it burned hottest. It was about a broader pattern: the journalism that should have been holding power accountable, explaining complex things clearly, and making people feel like they understood the world they lived in was consistently failing to do any of those things. And the people who paid the highest price for that failure were always the ones already most vulnerable.
+    </p>
+
+    <p class="story-text">
+      Cristóbal had always been drawn to reading — real reading, the kind that cuts through noise and lands somewhere true. He'd grown up consuming news voraciously, across languages and across outlets, developing an instinct for when something was being told straight and when it wasn't. He knew what good journalism felt like. He also knew what it was doing to people when it was absent.
+    </p>
+
+    <p class="story-text">
+      In 2026, in his fourth year of secondary school, he decided to stop waiting for someone else to build it. <strong>Refract</strong> started as an answer to a simple question: what would a news outlet look like if its first priority was clarity, its second was honesty, and its third was the people who needed it most?
+    </p>
+
+    <p class="story-text">
+      The answer was a bilingual platform — English and Spanish — covering LGBTQ+ rights, Peruvian politics, and US policy with rigour that Peruvian media rarely applies to these beats. Every article sourced. Every fact-check published with full methodology. And alongside the journalism, a real resource page for LGBTQ+ people in Peru who need help, not just information.
+    </p>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"Most news doesn't lie outright. It just shows you one angle of the light. Refract breaks complex stories into their real components — so young people can see the full spectrum of what's actually happening."</div>
+      <div class="pull-quote-attr">— The Refract Manifesto</div>
+    </div>
+
+    <p class="story-text">
+      Refract is not a project. It is not a school assignment. It is a publication — built by a teenager in Lima who looked at the media landscape around him, found it insufficient, and decided that was a problem worth solving.
+    </p>
+
+    <!-- PILLARS -->
+    <div class="section-break">
+      <div class="section-break-title">What We Stand For</div>
+      <div class="section-break-line"></div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 01</div>
+        <div class="pillar-title">Radical Clarity</div>
+        <div class="pillar-desc">No jargon. No filler. Every story explained as simply as possible without losing the complexity that actually matters.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 02</div>
+        <div class="pillar-title">Verified Always</div>
+        <div class="pillar-desc">Nothing published without a source. We show our work so readers can verify it themselves — always.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 03</div>
+        <div class="pillar-title">The Ignored Stories</div>
+        <div class="pillar-desc">LGBTQ+ rights. Latin American politics. The stories mainstream outlets treat as footnotes are our front page.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 04</div>
+        <div class="pillar-title">We Report. We Also Help.</div>
+        <div class="pillar-desc">Journalism plus real resources for people who need more than information. Refract is a publication and a safe space.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar-col">
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <div class="sidebar-card-title">About the Founder</div>
+      </div>
+      <div class="sidebar-card-body">
+        <p><strong style="color:var(--white)">Cristóbal de Asín</strong> is a Year 10 student based in Lima, Peru. He founded Refract in 2026.</p>
+        <p>He is 15 years old and runs Refract entirely independently — writing, editing, fact-checking, and building the platform himself.</p>
+        <p>He writes primarily in English and Spanish, covering LGBTQ+ rights, Peruvian political affairs, and US policy.</p>
+      </div>
+    </div>
+
+    <div class="sidebar-card" style="border-top-color:var(--slate);margin-top:1px;">
+      <div class="sidebar-card-header">
+        <div class="sidebar-card-title" style="color:var(--slate);">Support resources</div>
+      </div>
+      <div class="sidebar-card-body">
+        <p>Refract isn't just a news outlet. We maintain a full directory of LGBTQ+ support organisations in Peru — legal help, mental health care, and crisis lines.</p>
+      </div>
+      <a class="sidebar-link" href="apoyo.html">View all resources →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html"><span class="footer-wordmark">Refract</span></a>
+        <div class="footer-rule"></div>
+        <span class="footer-tag">Split the light.</span>
+        <p class="footer-desc">Fact-checked journalism on US politics, Peruvian affairs, and LGBTQ+ rights — built for young people who are tired of being misled.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Beats</div>
+        <div class="footer-links">
+          <a class="footer-link" href="lgbtq.html">LGBTQ+ Rights</a>
+          <a class="footer-link" href="peru.html">Peru &amp; Latin America</a>
+          <a class="footer-link" href="uspolitics.html">US Politics</a>
+          <a class="footer-link" href="science.html">Science</a>
+          <a class="footer-link" href="factcheck.html">Fact-Check Archive</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">About</div>
+        <div class="footer-links">
+          <a class="footer-link" href="mission.html">Our Mission</a>
+          <span class="footer-link">Editorial Standards</span>
+          <span class="footer-link">Corrections Policy</span>
+          <span class="footer-link">Contact</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Follow</div>
+        <div class="footer-links">
+          <a class="footer-link" href="https://instagram.com/refractmedia" target="_blank">Instagram</a>
+          <a class="footer-link" href="https://tiktok.com/@refractmedia" target="_blank">TikTok</a>
+          <a class="footer-link" href="index.html#newsletter">Newsletter</a>
+          <a class="footer-link" href="apoyo.html">Support Resources</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Refract · Lima, Peru · All rights reserved</span>
+      <div class="footer-social">
+        <span class="social-link">@refract.media</span>
+        <span class="social-link">Privacy</span>
+        <span class="social-link">Terms</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FOOTER MODALS for Standards / Corrections / Contact -->
+<div class="fmodal-overlay" id="fm-standards" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="fmodal">
+    <button class="fmodal-close" onclick="document.getElementById('fm-standards').classList.remove('open')">×</button>
+    <div class="fmodal-tag">📋 Refract</div>
+    <div class="fmodal-title">Editorial Standards</div>
+    <div class="fmodal-rule"></div>
+    <div class="fmodal-body">
+      <p>Every claim must have at least one primary source — an official document, peer-reviewed study, government record, or direct named quote. Secondary sources corroborate only; never the sole basis for a claim.</p>
+      <p>Fact-check verdicts: <strong style="color:#7B9E8F">Confirmed</strong> — accurate as stated. <strong style="color:#E8D5B0">Misleading</strong> — true but missing context that changes the meaning. <strong style="color:#C17B6B">False</strong> — factually incorrect. Full methodology and sources published with every fact-check.</p>
+      <p>Refract accepts no advertising, no sponsored content, and is not influenced by any organisation, government, political party, or donor. Editorially independent.</p>
+    </div>
+  </div>
+</div>
+
+<div class="fmodal-overlay" id="fm-corrections" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="fmodal">
+    <button class="fmodal-close" onclick="document.getElementById('fm-corrections').classList.remove('open')">×</button>
+    <div class="fmodal-tag">✏️ Refract</div>
+    <div class="fmodal-title">Corrections Policy</div>
+    <div class="fmodal-rule"></div>
+    <div class="fmodal-body">
+      <p>When we get something wrong, we fix it — transparently and promptly. Corrections appear at the <strong>top</strong> of the article with the date. We never silently edit errors.</p>
+      <p>To submit a correction: send the article title, the specific claim you believe is wrong, and any supporting sources to <a href="mailto:hello@refractnews.org">hello@refractnews.org</a>. We respond within 48 hours.</p>
+      <div class="fmodal-mono">CORRECTIONS LOG — No corrections issued as of March 2026.</div>
+    </div>
+  </div>
+</div>
+
+<div class="fmodal-overlay" id="fm-contact" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="fmodal">
+    <button class="fmodal-close" onclick="document.getElementById('fm-contact').classList.remove('open')">×</button>
+    <div class="fmodal-tag">✉️ Refract</div>
+    <div class="fmodal-title">Contact</div>
+    <div class="fmodal-rule"></div>
+    <div class="fmodal-body">
+      <p><strong>Editorial &amp; tips —</strong><br><a href="mailto:hello@refractnews.org">hello@refractnews.org</a></p>
+      <p><strong>Corrections —</strong><br><a href="mailto:hello@refractnews.org">hello@refractnews.org</a></p>
+      <p><strong>Social —</strong><br><a href="https://instagram.com/refractmedia" target="_blank">@refractmedia</a> on Instagram &amp; TikTok</p>
+      <div class="fmodal-mono">Based in Lima, Peru — covering the world.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var map={'Editorial Standards':'fm-standards','Corrections Policy':'fm-corrections','Contact':'fm-contact'};
+  document.querySelectorAll('.footer-link').forEach(function(el){
+    var key=el.textContent.trim();
+    if(map[key]){el.style.cursor='pointer';el.addEventListener('click',function(){document.getElementById(map[key]).classList.add('open');});}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.fmodal-overlay.open').forEach(function(m){m.classList.remove('open');});});
+})();
+</script>
+</body>
+</html>
