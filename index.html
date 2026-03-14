@@ -39,17 +39,30 @@ a{color:inherit;text-decoration:none;}
 /* COVER */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.cover{padding:120px 72px 100px;position:relative;border-bottom:1px solid var(--border);overflow:hidden;}
+.cover{padding:120px 72px 100px;position:relative;border-bottom:1px solid var(--border);overflow:hidden;text-align:center;display:flex;flex-direction:column;align-items:center;}
 .cover::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:conic-gradient(from 0deg,#E8D5B020,#7B9E8F15,#C17B6B10,#6B7FA318,#E8D5B020);border-radius:50%;filter:blur(80px);animation:rotate 20s linear infinite;pointer-events:none;}
 .cover-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--amber);margin-bottom:40px;animation:fadeUp .8s ease forwards .2s;opacity:0;position:relative;z-index:1;}
 .cover-title{font-family:'Playfair Display',serif;font-size:clamp(72px,12vw,140px);font-weight:900;line-height:.9;color:var(--white);letter-spacing:-.03em;margin-bottom:32px;animation:fadeUp .8s ease forwards .4s;opacity:0;position:relative;z-index:1;}
-.cover-title span{display:block;background:linear-gradient(135deg,var(--amber) 0%,var(--sage) 50%,var(--terra) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.cover-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.5vw,26px);color:var(--subtle);max-width:520px;line-height:1.5;margin-bottom:64px;animation:fadeUp .8s ease forwards .6s;opacity:0;position:relative;z-index:1;}
+.cover-title-plain{display:block;color:var(--white);}
+.cover-title-gradient{display:block;background:linear-gradient(135deg,var(--amber) 0%,var(--sage) 55%,var(--slate) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cover-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.5vw,26px);color:var(--white);max-width:580px;line-height:1.55;margin-bottom:28px;animation:fadeUp .8s ease forwards .6s;opacity:0;position:relative;z-index:1;}
 .cover-meta{display:flex;gap:48px;animation:fadeUp .8s ease forwards .8s;opacity:0;position:relative;z-index:1;flex-wrap:wrap;}
 .cover-meta-item{display:flex;flex-direction:column;gap:4px;}
 .cover-meta-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
 .cover-meta-value{font-size:14px;color:var(--body);font-weight:500;}
 .cover-meta-value a{color:var(--amber);border-bottom:1px solid var(--amber);padding-bottom:1px;}
+.cover-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--subtle);margin-bottom:36px;animation:fadeUp .8s ease forwards .2s;opacity:0;position:relative;z-index:1;}
+.cover-beats-rule{height:1px;background:var(--spec);margin-bottom:28px;max-width:320px;animation:fadeUp .8s ease forwards .8s;opacity:0;position:relative;z-index:1;}
+.cover-beats{display:flex;gap:10px;flex-wrap:wrap;animation:fadeUp .8s ease forwards 1s;opacity:0;position:relative;z-index:1;}
+.cover-beat{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid;transition:background .2s;cursor:pointer;text-decoration:none;}
+.cover-beat.sage{color:var(--sage);border-color:rgba(123,158,143,.25);}
+.cover-beat.sage:hover{background:rgba(123,158,143,.08);}
+.cover-beat.terra{color:var(--terra);border-color:rgba(193,123,107,.25);}
+.cover-beat.terra:hover{background:rgba(193,123,107,.08);}
+.cover-beat.slate{color:var(--slate);border-color:rgba(107,127,163,.25);}
+.cover-beat.slate:hover{background:rgba(107,127,163,.08);}
+.cover-beat.amber{color:var(--amber);border-color:rgba(232,213,176,.2);}
+.cover-beat.amber:hover{background:rgba(232,213,176,.06);}
 
 /* CONTAINER */
 .container{max-width:1400px;margin:0 auto;padding:0 40px;}
@@ -228,24 +241,18 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 
 <!-- COVER -->
 <div class="cover" id="top">
-  <div class="cover-label">Breaking Analysis — March 5, 2026</div>
+  <div class="cover-eyebrow">Lima, Peru · Est. 2026 · Bilingual · Fact-checked</div>
   <div class="cover-title">
-    <span>Peru's<br>Civil Union Bill<br>Fails Again</span>
+    <span class="cover-title-plain">You're being misled.</span>
+    <span class="cover-title-gradient">We can show you how.</span>
   </div>
-  <div class="cover-tagline">For the third consecutive session, Congress rejected recognition of same-sex partnerships. We break down what actually happened — and the science lawmakers refused to read.</div>
-  <div class="cover-meta">
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Category</span>
-      <span class="cover-meta-value">Breaking · LGBTQ+</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">By</span>
-      <span class="cover-meta-value">Cristóbal de Asín</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Read</span>
-      <span class="cover-meta-value"><a href="article.html">Full analysis →</a></span>
-    </div>
+  <div class="cover-tagline">Behind every headline is a spectrum of context, power, and truth that most outlets never bother to show you. We split the light.</div>
+  <div class="cover-beats-rule"></div>
+  <div class="cover-beats">
+    <a class="cover-beat sage" href="lgbtq.html">LGBTQ+ Rights</a>
+    <a class="cover-beat terra" href="peru.html">Peru &amp; Latin America</a>
+    <a class="cover-beat slate" href="uspolitics.html">US Politics</a>
+    <a class="cover-beat amber" href="factcheck.html">Fact-Check</a>
   </div>
 </div>
 
