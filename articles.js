@@ -19,18 +19,8 @@
 const ARTICLES = [
 
   /* ➕ ADD NEW ARTICLES HERE — newest at the top */
-
-  /* EXAMPLE — delete this when you publish your first real article:
-  {
-    file:     "your-article-slug.html",
-    category: "LGBTQ+ Rights",
-    color:    "sage",
-    headline: "Your headline here",
-    deck:     "One or two sentence summary of the article.",
-    date:     "Mar 20, 2026",
-    verdict:  null,
-  },
-  */
+/* LGBTQ PANIC LAW */
+{ file: "lgbtq-panic-defense-peru.html", category: "LGBTQ+ Rights", color: "sage", headline: "The Legal Defense That Lets Justify Crimes Under the Justification of Someone's Queerness", deck: "In 30 U.S. states, a defense attorney can still tell a jury that a victim's own LGBTQ+ identity is what triggered their killer's violence...", date: "Jul 19, 2026", verdict: null }
 
 ];
 
