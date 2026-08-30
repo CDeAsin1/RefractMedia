@@ -22,7 +22,8 @@ const ARTICLES = [
 /* LGBTQ PANIC LAW */
 { file: "lgbtq-panic-defense-peru.html", category: "LGBTQ+ Rights", color: "sage", headline: "The Legal Defense That Lets Justify Crimes Under the Justification of Someone's Queerness", deck: "In 30 U.S. states, a defense attorney can still tell a jury that a victim's own LGBTQ+ identity is what triggered their killer's violence...", date: "Jul 19, 2026", verdict: null }
 
-];
+/* AI BUBBLE */
+{ file: "ai-bubble-economy.html", category: "Science", color: "amber", headline: "Ghost Dollars: Inside the Trillion-Dollar AI Bubble", deck: "OpenAI is spending $1.5 trillion while making $20 billion. Nvidia has quietly stopped being a gamer's company. And the money moving through this boom may not be real at all.", date: "Jul 26, 2026", verdict: null }
 
 /* Keep newest-first automatically, regardless of the order
    articles were added above — no manual reordering needed. */
