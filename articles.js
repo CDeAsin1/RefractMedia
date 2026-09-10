@@ -34,4 +34,4 @@ const ARTICLES = [
 ];
 /* Keep newest-first automatically, regardless of the order
    articles were added above — no manual reordering needed. */
-ARTICLES.sort((a, b) => new Date(b.date) - new Date(a.date));
+ARTICLES.sort((a, b) => new Date(b.date) - new Date(a.date),);
