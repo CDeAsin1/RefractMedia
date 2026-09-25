@@ -19,6 +19,12 @@
 const ARTICLES = [
 
   /* ➕ ADD NEW ARTICLES HERE — newest at the top */
+/* EAC COMMISSIONERS */
+{ file: "eac-commissioners-fired.html", category: "US Politics", color: "slate", headline: "Trump Fired the Last Members of the Election Assistance Commission", deck: "Four months before the midterms, the federal agency that certifies voting equipment and funds election security has zero commissioners.", date: "Jul 10, 2026", verdict: "confirmed" },
+
+/* PERU EVOLUTIVO */
+{ file: "peru-evolutionary-wildlife.html", category: "Science", color: "amber", headline: "I Built an Interactive Museum of Peru's Evolutionary History. Here's Why.", deck: "Ten species, three regions, and millions of years of evolution, mapped into one interactive site.", date: "Aug 15, 2026", verdict: null },
+
 /* LGBTQ PANIC LAW */
 { file: "lgbtq-panic-defense-peru.html", category: "LGBTQ+ Rights", color: "sage", headline: "The Legal Defense That Lets Justify Crimes Under the Justification of Someone's Queerness", deck: "In 30 U.S. states, a defense attorney can still tell a jury that a victim's own LGBTQ+ identity is what triggered their killer's violence...", date: "Jul 19, 2026", verdict: null },
 
