@@ -190,8 +190,7 @@ const ARTICLE = {
     tagline:     "Split the light.",
     description: "Fact-checked journalism on US politics, Peruvian affairs, and LGBTQ+ rights — built for young people who are tired of being misled.",
     copyright:   "© 2026 Refract · Lima, Peru · All rights reserved",
-    instagram:   "https://instagram.com/refractmedia",
-    tiktok:      "https://tiktok.com/@refractmedia",
+    instagram:   "https://instagram.com/refract.news",
   },
 
 };
@@ -518,7 +517,6 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <div class="footer-col-title">Follow</div>
         <div class="footer-links">
           <a class="footer-link" id="r-ft-ig" target="_blank">Instagram</a>
-          <a class="footer-link" id="r-ft-tt" target="_blank">TikTok</a>
           <span class="footer-link">Newsletter</span>
         </div>
       </div>
@@ -526,7 +524,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
     <div class="footer-bottom">
       <span class="footer-copy" id="r-ft-copy"></span>
       <div class="footer-social">
-        <span class="social-link">@refract.media</span>
+        <a class="social-link" href="https://instagram.com/refract.news" target="_blank">@refract.news</a>
         <span class="social-link">Privacy</span>
         <span class="social-link">Terms</span>
       </div>
@@ -641,7 +639,6 @@ document.getElementById('r-ft-tag').textContent = ARTICLE.footer.tagline;
 document.getElementById('r-ft-desc').textContent = ARTICLE.footer.description;
 document.getElementById('r-ft-copy').textContent = ARTICLE.footer.copyright;
 document.getElementById('r-ft-ig').href = ARTICLE.footer.instagram;
-document.getElementById('r-ft-tt').href = ARTICLE.footer.tiktok;
 </script>
 
 
