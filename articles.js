@@ -38,7 +38,21 @@ const ARTICLES = [
 { file: "nasa-roman-telescope.html", category: "Science", color: "amber", headline: "NASA's New Telescope Sees 100 Times More Sky Than Hubble", deck: "The Nancy Grace Roman Space Telescope launched August 30, 2026, and could find around 100,000 new planets.", date: "Aug 31, 2026", verdict: null },
 
 /* LGBTQ YOUTH DATA */
-{ file: "lgbtq-youth-suicide-data.html", category: "LGBTQ+ Rights", color: "sage", headline: "What September's Numbers Actually Show About LGBTQ+ Youth", deck: "One in five LGBTQ+ high schoolers attempted suicide in the past year, per the CDC.", date: "Jun 7, 2026", verdict: "confirmed" },
+{ file: "lgbtq-youth-suicide-data.html", category: "LGBTQ+ Rights", color: "sage", headline: "What September's Numbers Actually Show About LGBTQ+ Youth", deck: "One in five LGBTQ+ high schoolers attempted suicide in the past year, per the CDC.", date: "Sep 7, 2026", verdict: "confirmed" },
+
+/* SHUTDOWN FALL 2025 */
+// HIDDEN until the page is uploaded — remove the // to publish:
+// { file: "shutdown-fall-2025.html", category: "US Politics", color: "slate", headline: "America Just Had Its Longest Government Shutdown Ever", deck: "A 43-day standoff over healthcare subsidies furloughed roughly 750,000 federal workers and cost an estimated $11 billion.", date: "Nov 13, 2025", verdict: "confirmed" },
+
+/* VA NJ ELECTIONS 2025 */
+// HIDDEN until the page is uploaded — remove the // to publish:
+// { file: "va-nj-elections-2025.html", category: "US Politics", color: "slate", headline: "Democrats Just Swept the First Elections of Trump's Second Term", deck: "Abigail Spanberger and Mikie Sherrill won Virginia and New Jersey by wide margins, an early signal for 2026.", date: "Nov 5, 2025", verdict: "confirmed" },
+
+/* SHUTDOWN SPRING 2026 */
+{ file: "shutdown-spring-2026.html", category: "US Politics", color: "slate", headline: "DHS Was Shut Down for 76 Days. Here's Why.", deck: "A funding lapse limited to Homeland Security dragged on for 76 days, the longest on record, though far narrower than last fall's shutdown.", date: "Apr 30, 2026", verdict: "confirmed" },
+
+/* CHILES V SALAZAR */
+{ file: "chiles-v-salazar-ruling.html", category: "LGBTQ+ Rights", color: "sage", headline: "Supreme Court Sides With Therapist, Undermines Conversion Therapy Bans Nationwide", deck: "An 8-1 ruling in Chiles v. Salazar found Colorado's ban regulates speech based on viewpoint.", date: "Apr 3, 2026", verdict: "confirmed" },
 
 ];
 /* Keep newest-first automatically, regardless of the order
