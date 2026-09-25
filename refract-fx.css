@@ -89,6 +89,17 @@ img,video,iframe,svg{max-width:100%;}
 .beat-icon{display:inline-block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
 .beat-card:hover .beat-icon{transform:scale(1.2) rotate(-6deg);}
 
+/* Section grids: each card draws its own hairline, so a half-full
+   last row ends cleanly instead of showing the grid's grey background */
+.article-grid{background:none!important;border:none!important;gap:1px!important;}
+.article-grid>.article-card{box-shadow:0 0 0 1px var(--border);}
+@media(hover:hover){.article-grid>.article-card:hover{box-shadow:0 0 0 1px var(--border),0 22px 44px -22px rgba(0,0,0,.8);}}
+
+/* Google Translate: keep its toolbar and tooltips out of the layout */
+.goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame,.VIpgJd-ZVi9od-ORHb-OEVmcd,.VIpgJd-ZVi9od-aZ2wEe-wOHMyf{display:none!important;}
+body{top:0!important;}
+font{background:none!important;box-shadow:none!important;}
+
 /* Fact-check verdict badges on cards */
 .verdict-tag{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border:1px solid currentColor;line-height:1.4;}
 .verdict-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;}
