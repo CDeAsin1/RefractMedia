@@ -155,20 +155,24 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
     <span class="section-header-title">All Articles</span>
     <div class="section-header-line"></div>
   </div>
-  <div class="article-grid">
-        <div class="empty-card">
-      <div class="empty-card-icon">✍️</div>
-      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
-    </div>
-        <div class="empty-card">
-      <div class="empty-card-icon">✍️</div>
-      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
-    </div>
-        <div class="empty-card">
-      <div class="empty-card-icon">✍️</div>
-      <div class="empty-card-text">Article coming soon<br>Open this file and replace this block<br>with an article-card to publish</div>
-    </div>
-  </div>
+  <div class="article-grid" id="factcheck-grid"></div>
+  <script src="articles.js"></script>
+  <script>
+  /* Every article with a verdict in articles.js shows up here automatically */
+  (function () {
+    var list = (typeof ARTICLES !== 'undefined') ? ARTICLES.filter(function (a) { return a.verdict; }) : [];
+    document.getElementById('factcheck-grid').innerHTML = list.map(function (a) {
+      var v = a.verdict.charAt(0).toUpperCase() + a.verdict.slice(1);
+      return '<a class="article-card" href="' + a.file + '" style="text-decoration:none;color:inherit;">' +
+        '<div class="card-category ' + a.color + '">' + a.category + '</div>' +
+        '<div class="verdict-tag ' + a.verdict + '">' + v + '</div>' +
+        '<h2 class="card-headline">' + a.headline + '</h2>' +
+        '<p class="card-deck">' + a.deck + '</p>' +
+        '<div class="card-meta"><span class="card-date">' + a.date + '</span><span class="card-read ' + a.color + '">Read →</span></div>' +
+        '</a>';
+    }).join('');
+  })();
+  </script>
 </div>
 
 <footer>

@@ -531,40 +531,6 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
   </div>
 </div>
 
-<!-- TRANSLATE -->
-<div id="google_translate_element" style="display:none"></div>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,en',autoDisplay:false},'google_translate_element');
-}
-(function(){
-  function getLang(){
-    // Try cookie first, fall back to localStorage
-    var m=document.cookie.match(/googtrans=\/en\/([a-z]+)/);
-    if(m)return m[1];
-    return localStorage.getItem('refract_lang')||'en';
-  }
-  function setLang(lang){
-    var d=new Date();d.setFullYear(d.getFullYear()+1);
-    // Set cookie on both path and domain variants for cross-browser support
-    document.cookie='googtrans=/en/'+lang+'; expires='+d.toUTCString()+'; path=/; SameSite=None; Secure';
-    document.cookie='googtrans=/en/'+lang+'; expires='+d.toUTCString()+'; path=/; domain=.'+location.hostname+'; SameSite=None; Secure';
-    document.cookie='googtrans=/en/'+lang+'; expires='+d.toUTCString()+'; path=/';
-    // localStorage as fallback for Safari ITP and browsers that block third-party cookies
-    try{localStorage.setItem('refract_lang',lang);}catch(e){}
-    location.reload();
-  }
-  window.addEventListener('DOMContentLoaded',function(){
-    var btn=document.getElementById('refract-translate-btn');
-    if(!btn)return;
-    var lang=getLang();
-    btn.textContent=lang==='es'?'EN':'ES';
-    btn.addEventListener('click',function(){setLang(lang==='es'?'en':'es');});
-  });
-})();
-</script>
-
 <!-- THEME TOGGLE -->
 <button class="theme-toggle" id="refract-theme-btn" onclick="toggleTheme()" title="Toggle theme">☀</button>
 <script>
