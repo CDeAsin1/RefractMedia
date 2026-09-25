@@ -184,6 +184,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
 .support-trigger:hover{background:var(--white);}
 .support-trigger-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);animation:pulse 2s ease-in-out infinite;}
 </style>
+<link rel="stylesheet" href="refract-fx.css">
 </head>
 <body>
 
@@ -467,5 +468,6 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
 function toggleTheme(){var isLight=document.documentElement.getAttribute('data-theme')==='light';var mast=document.getElementById('site-masthead');if(isLight){document.documentElement.removeAttribute('data-theme');if(mast)mast.style.background='#0A0A0A';localStorage.setItem('refract_theme','dark');}else{document.documentElement.setAttribute('data-theme','light');if(mast)mast.style.background='#F5F2ED';localStorage.setItem('refract_theme','light');}updateThemeBtn(isLight?'dark':'light');}
 function updateThemeBtn(theme){var btn=document.getElementById('refract-theme-btn');if(!btn)return;btn.textContent=theme==='light'?'🌙':'☀';}
 </script>
+<script src="refract-fx.js"></script>
 </body>
 </html>

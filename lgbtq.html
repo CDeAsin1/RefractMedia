@@ -175,6 +175,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 @media(max-width:600px){.popup-overlay{padding:16px;align-items:flex-end;justify-content:center;}.popup-card{width:100%;}.popup-trigger{bottom:16px;left:16px;}}
 
 </style>
+<link rel="stylesheet" href="refract-fx.css">
 </head>
 <body>
 
@@ -251,7 +252,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 </a>
  <a class="article-card" href="lgbtq-youth-suicide-data.html" style="text-decoration:none;color:inherit;">
   <div class="card-category sage">LGBTQ+ Rights</div>
-  <div class="verdict-tag confirmed">● Confirmed</div>
+  <div class="verdict-tag confirmed">Confirmed</div>
   <h2 class="card-headline">What September's Numbers Actually Show About LGBTQ+ Youth</h2>
   <p class="card-deck">One in five LGBTQ+ high schoolers attempted suicide in the past year, per the CDC's most recent national survey.</p>
   <div class="card-meta"><span class="card-date">Jun 7, 2026</span><span class="card-read sage">Read →</span></div>
@@ -512,5 +513,6 @@ document.getElementById('supportPopup').addEventListener('click', function(e) {
 function toggleTheme(){var isLight=document.documentElement.getAttribute('data-theme')==='light';var mast=document.getElementById('site-masthead');if(isLight){document.documentElement.removeAttribute('data-theme');if(mast)mast.style.background='#0A0A0A';localStorage.setItem('refract_theme','dark');}else{document.documentElement.setAttribute('data-theme','light');if(mast)mast.style.background='#F5F2ED';localStorage.setItem('refract_theme','light');}updateThemeBtn(isLight?'dark':'light');}
 function updateThemeBtn(theme){var btn=document.getElementById('refract-theme-btn');if(!btn)return;btn.textContent=theme==='light'?'🌙':'☀';}
 </script>
+<script src="refract-fx.js"></script>
 </body>
 </html>
