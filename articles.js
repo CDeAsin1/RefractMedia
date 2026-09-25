@@ -49,7 +49,7 @@ const ARTICLES = [
 // { file: "va-nj-elections-2025.html", category: "US Politics", color: "slate", headline: "Democrats Just Swept the First Elections of Trump's Second Term", deck: "Abigail Spanberger and Mikie Sherrill won Virginia and New Jersey by wide margins, an early signal for 2026.", date: "Nov 5, 2025", verdict: "confirmed" },
 
 /* SHUTDOWN SPRING 2026 */
-{ file: "shutdown-spring-2026.html", category: "US Politics", color: "slate", headline: "The Government Just Shut Down Again. This Time It Lasted Twice as Long.", deck: "A second funding lapse beginning February 14 dragged on for 76 days, the longest shutdown in American history.", date: "Apr 30, 2026", verdict: "confirmed" },
+{ file: "shutdown-spring-2026.html", category: "US Politics", color: "slate", headline: "DHS Was Shut Down for 76 Days. Here's Why.", deck: "A funding lapse limited to Homeland Security dragged on for 76 days, the longest on record, though far narrower than last fall's shutdown.", date: "Apr 30, 2026", verdict: "confirmed" },
 
 /* CHILES V SALAZAR */
 { file: "chiles-v-salazar-ruling.html", category: "LGBTQ+ Rights", color: "sage", headline: "Supreme Court Sides With Therapist, Undermines Conversion Therapy Bans Nationwide", deck: "An 8-1 ruling in Chiles v. Salazar found Colorado's ban regulates speech based on viewpoint.", date: "Apr 3, 2026", verdict: "confirmed" },
