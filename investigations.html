@@ -142,6 +142,76 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
 
 @media(max-width:900px){.masthead-inner{grid-template-columns:auto 1fr auto;}.nav-left{display:none;}.gate-grid,.inv-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.page-hero,.container,#gate-screen{padding-left:20px;padding-right:20px;}footer{padding:40px 20px;}.gate-info,.gate-code-panel{padding:32px 24px;}}
+
+/* ── REDESIGN ─────────────────────────────────────────────── */
+.page-hero{position:relative;overflow:hidden;padding-top:96px!important;padding-bottom:72px!important;}
+.page-hero>*{position:relative;z-index:1;}
+.page-hero::before{content:'';position:absolute;z-index:0;top:-240px;right:-180px;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(193,123,107,.22),rgba(193,123,107,0) 65%);filter:blur(20px);animation:invPulse 8s ease-in-out infinite;pointer-events:none;}
+.page-hero::after{content:'';position:absolute;z-index:0;left:0;right:0;top:0;height:120px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(193,123,107,0),rgba(193,123,107,.08),rgba(193,123,107,0));animation:invScan 7s linear infinite;}
+@keyframes invPulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.15);opacity:1}}
+@keyframes invScan{from{transform:translateY(-120px)}to{transform:translateY(720px)}}
+.page-hero-title span{background:linear-gradient(120deg,var(--terra),var(--amber) 60%,var(--terra));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:rfx-flow 7s ease-in-out infinite;}
+.inv-stats{display:grid;grid-template-columns:repeat(3,minmax(0,220px));gap:40px;margin-top:48px;}
+.inv-stat{display:flex;flex-direction:column;gap:6px;padding-left:16px;border-left:1px solid rgba(193,123,107,.45);}
+.inv-stat-num{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,48px);font-weight:900;color:var(--white);line-height:1;letter-spacing:-.02em;}
+.inv-stat-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+.inv-hero-cta{display:inline-flex;align-items:center;gap:10px;margin-top:44px;background:var(--terra);color:var(--black);padding:14px 26px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .2s;}
+.inv-hero-cta span{display:inline-block;animation:invBob 1.8s ease-in-out infinite;}
+.inv-hero-cta:hover{background:var(--amber);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(193,123,107,.7);}
+@keyframes invBob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* Locked previews */
+.inv-preview{max-width:1400px;margin:0 auto;padding:72px 40px 8px;}
+.inv-preview-head{margin-bottom:28px;}
+.inv-preview-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.4vw,42px);font-weight:900;color:var(--white);letter-spacing:-.02em;line-height:1.1;}
+.inv-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.inv-locked{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);overflow:hidden;position:relative;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .3s;}
+.inv-locked::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));z-index:2;}
+.inv-locked:hover{transform:translateY(-4px);border-color:rgba(193,123,107,.5);box-shadow:0 24px 50px -24px rgba(0,0,0,.9);}
+.inv-locked-img{position:relative;aspect-ratio:16/8;overflow:hidden;background:var(--surface-2);}
+.inv-locked-img img{width:100%;height:100%;object-fit:cover;filter:blur(7px) saturate(.6) brightness(.55);transform:scale(1.12);transition:filter .6s,transform .8s cubic-bezier(.16,1,.3,1);}
+.inv-locked:hover .inv-locked-img img{filter:blur(4px) saturate(.8) brightness(.7);transform:scale(1.06);}
+.inv-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--white);}
+.inv-locked-body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:10px;}
+.inv-locked-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--white);line-height:1.25;transition:color .25s;}
+.inv-locked:hover .inv-locked-title{color:var(--amber);}
+.inv-locked-desc{font-size:13.5px;color:var(--subtle);line-height:1.6;}
+
+/* Gate: timeline steps, glowing code panel */
+#gate-screen{scroll-margin-top:80px;}
+.gate-grid{background:none!important;border:none!important;gap:24px!important;}
+.gate-info,.gate-code-panel{border:1px solid var(--border);}
+.gate-code-panel{position:relative;box-shadow:0 0 0 1px rgba(193,123,107,.15),0 30px 60px -30px rgba(193,123,107,.35);}
+.gate-code-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));}
+.gate-steps{position:relative;gap:22px!important;}
+.gate-steps::before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--terra),rgba(193,123,107,.1));}
+.gate-step-num{width:32px!important;height:32px;border-radius:50%;border:1px solid var(--terra);background:var(--surface);display:flex;align-items:center;justify-content:center;padding-top:0!important;position:relative;font-size:10px!important;transition:background .3s,color .3s;}
+.gate-step:hover .gate-step-num{background:var(--terra);color:var(--black);}
+.gate-step-text{padding-top:5px;}
+.gate-code-input,.gate-input,.gate-textarea{transition:border-color .2s,box-shadow .2s;}
+.gate-code-input:focus,.gate-input:focus,.gate-textarea:focus{box-shadow:0 0 0 3px rgba(193,123,107,.15);}
+.gate-code-btn{white-space:nowrap;}
+.gate-code-error.show{animation:invShake .4s;}
+@keyframes invShake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+
+/* Unlocked cards */
+.inv-grid{background:none!important;border:none!important;gap:24px!important;}
+.inv-card{border:1px solid var(--border);transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s;}
+@media(hover:hover){.inv-card:hover{transform:translateY(-3px);box-shadow:0 24px 50px -26px rgba(0,0,0,.9);}}
+.inv-card .inv-video{overflow:hidden;}
+/* show survey charts whole instead of cropping their labels */
+.inv-card .inv-video:has(img){aspect-ratio:auto;display:block;background:var(--surface-2);}
+.inv-card .inv-video img{height:auto!important;object-fit:contain!important;display:block;}
+.inv-card .inv-video img{transition:transform 1s cubic-bezier(.16,1,.3,1);}
+.inv-card:hover .inv-video img{transform:scale(1.04);}
+
+@media(max-width:900px){.inv-stats{grid-template-columns:1fr 1fr 1fr;gap:20px;}.inv-preview-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.inv-stats{grid-template-columns:1fr;gap:18px;}.inv-preview{padding:48px 20px 0;}
+  .page-hero{padding-top:64px!important;padding-bottom:52px!important;}
+  .gate-code-panel>div>div[style*="display:flex"]{flex-direction:column;}.gate-code-btn{align-self:stretch;}}
+@media(prefers-reduced-motion:reduce){.page-hero::before,.page-hero::after,.inv-hero-cta span{animation:none;}}
 </style>
 <link rel="stylesheet" href="refract-fx.css">
 </head>
@@ -191,6 +261,38 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
   <div class="page-hero-accent"></div>
   <h1 class="page-hero-title">The stories<br><span>behind the stories.</span></h1>
   <p class="page-hero-desc">Original research, primary source documents, video investigations, and survey results — available to approved readers only. Apply below.</p>
+  <div class="inv-stats">
+    <div class="inv-stat"><span class="inv-stat-num" data-count="2">2</span><span class="inv-stat-label">Reader surveys run in Lima</span></div>
+    <div class="inv-stat"><span class="inv-stat-num" data-count="65" data-prefix="+" data-suffix=" pts">+65 pts</span><span class="inv-stat-label">Rise in LGBTQ+ readers who feel represented</span></div>
+    <div class="inv-stat"><span class="inv-stat-num" data-count="85.7" data-suffix="%">85.7%</span><span class="inv-stat-label">Feel more able to spot a reliable source</span></div>
+  </div>
+  <a class="inv-hero-cta" href="#gate-screen">Request access <span>↓</span></a>
+</div>
+
+<!-- LOCKED PREVIEWS — what approved readers unlock -->
+<div class="inv-preview">
+  <div class="inv-preview-head">
+    <div class="page-hero-eyebrow" style="margin-bottom:8px;">Inside the archive</div>
+    <h2 class="inv-preview-title">What you'll unlock</h2>
+  </div>
+  <div class="inv-preview-grid">
+    <a class="inv-locked" href="#gate-screen">
+      <div class="inv-locked-img"><img src="survey-baseline-chart.png" alt="" aria-hidden="true"><span class="inv-lock">🔒 Approved readers only</span></div>
+      <div class="inv-locked-body">
+        <div class="inv-type">Survey Data · 01</div>
+        <div class="inv-locked-title">The First Refract Reader Survey: How Peruvian Students See the News</div>
+        <p class="inv-locked-desc">The baseline survey that shaped what Refract became, before a single article was published.</p>
+      </div>
+    </a>
+    <a class="inv-locked" href="#gate-screen">
+      <div class="inv-locked-img"><img src="survey-followup-chart.png" alt="" aria-hidden="true"><span class="inv-lock">🔒 Approved readers only</span></div>
+      <div class="inv-locked-body">
+        <div class="inv-type">Survey Data · 02</div>
+        <div class="inv-locked-title">The Second Refract Reader Survey: Did Any of It Actually Work?</div>
+        <p class="inv-locked-desc">The same students, months later. What changed after Refract's first stretch of publishing.</p>
+      </div>
+    </a>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -288,71 +390,6 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
     ─────────────────────────────────────────────────────────── -->
 
     <div class="inv-grid">
-
-      <!-- EXAMPLE: Written investigation (replace with real content) -->
-      <div class="inv-card">
-        <div class="inv-type">Written Investigation</div>
-        <div class="inv-title">Your investigation title goes here</div>
-        <p class="inv-desc">Summary of what this investigation covers. Who was interviewed, what documents were reviewed, what the findings show. Keep this to 2–3 sentences.</p>
-        <div class="inv-results">
-          <div class="inv-results-label">Key findings</div>
-          <div class="inv-results-body">Add your findings, quotes, and source notes here. This can include tables, data, or narrative text.</div>
-        </div>
-        <div class="inv-meta">
-          <span class="inv-date">Month YYYY</span>
-          <span class="inv-tag">Investigation</span>
-        </div>
-      </div>
-
-      <!-- EXAMPLE: Video investigation (replace with real YouTube embed) -->
-      <div class="inv-card">
-        <div class="inv-type">Video Investigation</div>
-        <div class="inv-title">Your video investigation title goes here</div>
-        <p class="inv-desc">Brief description of what the video covers. Who is speaking, what was filmed, what the viewer will learn.</p>
-        <div class="inv-video">
-          <!-- Replace this with your iframe when you have a video:
-               <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-          -->
-          <div class="inv-video-placeholder">
-            <div class="inv-video-icon">▶</div>
-            <div class="inv-video-label">Video coming soon — replace placeholder with YouTube embed</div>
-          </div>
-        </div>
-        <div class="inv-meta">
-          <span class="inv-date">Month YYYY</span>
-          <span class="inv-tag">Video</span>
-        </div>
-      </div>
-
-      <!-- EXAMPLE: Research results / survey data -->
-      <div class="inv-card">
-        <div class="inv-type">Research Results</div>
-        <div class="inv-title">Your research title goes here</div>
-        <p class="inv-desc">What was studied, how many participants, what methodology was used. A plain-language summary of the research design.</p>
-        <div class="inv-results">
-          <div class="inv-results-label">Results summary</div>
-          <div class="inv-results-body">Present your data and conclusions here. You can also link to external documents or embed charts if needed.</div>
-        </div>
-        <div class="inv-meta">
-          <span class="inv-date">Month YYYY</span>
-          <span class="inv-tag">Research</span>
-        </div>
-      </div>
-
-      <!-- EXAMPLE: Survey data -->
-      <div class="inv-card">
-        <div class="inv-type">Survey Data</div>
-        <div class="inv-title">Your survey title goes here</div>
-        <p class="inv-desc">Who was surveyed, how many respondents, what questions were asked, and what the data shows at a high level.</p>
-        <div class="inv-results">
-          <div class="inv-results-label">Survey findings</div>
-          <div class="inv-results-body">Paste your survey results summary here. Include response rates, notable patterns, and any statistical observations.</div>
-        </div>
-        <div class="inv-meta">
-          <span class="inv-date">Month YYYY</span>
-          <span class="inv-tag">Survey</span>
-        </div>
-      </div>
 
       <!-- Baseline reader survey — from Refract's founding research phase -->
       <div class="inv-card">
@@ -609,6 +646,29 @@ function updateThemeBtn(theme){
 }
 </script>
 
+<script>
+/* Hero stats count up when they come into view */
+(function(){
+  var els=document.querySelectorAll('.inv-stat-num[data-count]');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; io.unobserve(e.target);
+    var el=e.target,end=parseFloat(el.dataset.count),dec=(el.dataset.count.split('.')[1]||'').length,
+        pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',t0=performance.now(),dur=1400;
+    (function tick(t){var p=Math.min((t-t0)/dur,1),v=end*(1-Math.pow(1-p,3));
+      el.textContent=pre+v.toFixed(dec)+suf; if(p<1)requestAnimationFrame(tick);})(t0);
+  });},{threshold:.6});
+  els.forEach(function(el){io.observe(el);});
+})();
+/* Shake the error message on a wrong code */
+(function(){
+  var err=document.getElementById('code-error'); if(!err||!window.MutationObserver)return;
+  new MutationObserver(function(){err.classList.remove('show');void err.offsetWidth;err.classList.add('show');})
+    .observe(err,{attributes:true,attributeFilter:['style']});
+  var inp=document.getElementById('code-input');
+  if(inp)inp.addEventListener('keydown',function(e){if(e.key==='Enter')checkCode();});
+})();
+</script>
 <script src="refract-fx.js"></script>
 </body>
 </html>
