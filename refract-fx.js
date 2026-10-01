@@ -93,7 +93,7 @@
       if (e.target.closest('a')) setMenu(false);
     });
     addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
-    matchMedia('(min-width: 901px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
+    matchMedia('(min-width: 1181px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
   }
 
   /* ---------- Hero light beams ---------- */
