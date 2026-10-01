@@ -157,8 +157,10 @@ body.rfx-menu-open .rfx-menu-tools{opacity:1;}
 .rfx-menu-tools a.primary{background:var(--wordmark-color,var(--white));color:var(--off-black);border-color:transparent;}
 .rfx-menu-rule{height:1px;background:var(--spec);margin:0 0 24px;opacity:.7;position:relative;}
 
-/* ---------- TABLET / PHONE LAYOUT ---------- */
-@media(max-width:900px){
+/* ---------- TABLET / PHONE LAYOUT ----------
+   Burger menu below 1180px: the full desktop header needs ~1180px
+   (homepage has the most links) and would otherwise run off-screen. */
+@media(max-width:1180px){
   .masthead-inner{grid-template-columns:auto 1fr auto!important;padding:0 16px!important;gap:12px!important;height:64px!important;}
   .masthead.rfx-scrolled .masthead-inner{height:56px!important;}
   .nav-left{display:none!important;}

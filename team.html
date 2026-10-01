@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Mission | Refract</title>
+<title>Meet the Team | Refract</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0A0A0A;--surface:#161616;--surface-2:#1E1E1E;--border:#2A2A2A;--muted:#555;--subtle:#888;--body:#C8C8C8;--white:#F0EDE8;--amber:#E8D5B0;--sage:#7B9E8F;--terra:#C17B6B;--slate:#6B7FA3;--spec:linear-gradient(90deg,#E8D5B0,#7B9E8F,#6B7FA3,#C17B6B);}
@@ -113,6 +113,24 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 @media(max-width:1024px){.page-body{grid-template-columns:1fr;padding:0 40px 80px;}.sidebar-col{position:static;}}
 @media(max-width:768px){.hero{padding:64px 24px 56px;}.page-body{padding:0 24px 60px;}.pillars{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}.masthead-inner{grid-template-columns:auto 1fr auto;}.nav-left{display:none;}}
 @media(max-width:500px){footer{padding:40px 20px;}}
+
+/* MEET THE TEAM */
+.team-body{max-width:1400px;margin:0 auto;padding:0 72px 100px;}
+.team-photo{margin:56px 0 0;position:relative;border:1px solid var(--border);overflow:hidden;background:var(--surface);}
+.team-photo img{display:block;width:100%;height:auto;aspect-ratio:1350/854;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1);}
+.team-photo:hover img{transform:scale(1.02);}
+.team-photo::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--spec);}
+.team-photo figcaption{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);padding:14px 20px;border-top:1px solid var(--border);background:var(--surface);}
+.team-cards{grid-template-columns:repeat(3,1fr);}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.quote-card{position:relative;background:var(--surface);border:1px solid var(--border);padding:48px 36px 32px;overflow:hidden;}
+.quote-card::before{content:'\201C';position:absolute;top:-28px;left:20px;font-family:'Playfair Display',serif;font-size:160px;line-height:1;color:var(--amber);opacity:.18;pointer-events:none;}
+.quote-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--amber));}
+.quote-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,1.8vw,22px);color:var(--white);line-height:1.5;margin-bottom:28px;position:relative;}
+.quote-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--white);}
+.quote-role{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent,var(--amber));margin-top:4px;line-height:1.6;}
+@media(max-width:1024px){.team-body{padding:0 40px 80px;}.team-cards{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.team-body{padding:0 24px 60px;}.quotes{grid-template-columns:1fr;}.team-cards{grid-template-columns:1fr;}.quote-card{padding:40px 24px 28px;}}
 </style>
 <link rel="stylesheet" href="refract-fx.css">
 </head>
@@ -147,93 +165,24 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">🎯 Our Mission & Story</div>
-  <h1 class="hero-title">Why Refract<br><em>exists.</em></h1>
-  <p class="hero-deck">A high school student in Lima, a frustration that kept growing, and a decision to stop waiting for someone else to do it right.</p>
+  <div class="hero-eyebrow">👥 The people behind Refract</div>
+  <h1 class="hero-title">Meet the<br><em>team.</em></h1>
+  <p class="hero-deck">The students in Lima who write, edit and fact-check every story on Refract.</p>
 </div>
 
-<!-- BODY -->
-<div class="page-body">
+<div class="team-body">
 
-  <!-- MAIN COLUMN -->
-  <div class="main-col">
+  <figure class="team-photo">
+    <img src="team-photo.webp" alt="Six members of the Refract team standing together outdoors at their school in Lima" width="1350" height="854">
+    <figcaption>The Refract team at Colegio Santa María Marianistas, Lima.</figcaption>
+  </figure>
 
-    <div class="story-label">The Story</div>
+  <div class="section-break">
+    <div class="section-break-title">Who we are</div>
+    <div class="section-break-line"></div>
+  </div>
 
-    <p class="story-text">
-      Growing up in Lima, <strong>Cristóbal de Asín</strong> noticed something that bothered him long before he had the words for it. The news, Peruvian news, international news, news shared in group chats and on Instagram, almost always instead of informing the public, spread <em>heatred</em> towards people for who just wanted to be themselves. The same news that claimed to fight for people's well being where weaponizing the tool they claimed to use for safekeeping. Not only that, as Cristobal grew up he started to realize that the stories he cared about most were just <em>wrong</em>. Not necessarily lying. Just... incomplete. Flattened. Stripped of the context that would have made them actually mean something.
-    </p>
-
-    <p class="story-text">
-      And he saw the repercussion in his own communitty. He watched LGBTQ+ friends and community members navigate hostility — at school, in their neighbourhoods, in their own homes — while the media either ignored it entirely or reduced it to a political football. He read Peruvian coverage of the civil union bill that mentioned the vote but never the people it affected. He read international coverage of Peru that only showed up when something catastrophic happened.
-    </p>
-
-    <div class="pull-quote">
-      <div class="pull-quote-text">"I didn't want to build another news outlet. I wanted to build the one I needed growing up and couldn't find."</div>
-      <div class="pull-quote-attr">— Cristóbal de Asín, Founder</div>
-    </div>
-
-    <p class="story-text">
-      The frustation wasen't only about LGBTQ+ coverage- while it spiked the most- it was the whole landscape of forgotten and ignored stories by the media outlets that should have been holding power accountable, explaining complex things clearly, and making people feel like they understood the world.The people who paid the highest price for that failure were always the ones already most vulnerable.
-    </p>
-
-    <p class="story-text">
-      Cristóbal had always been drawn to reading. He'd grown up consuming news voraciously, across languages and across outlets, developing an instinct for when something was being told straight and when it wasn't. He knew what good journalism felt like, and definitly did not see it replicate in the news of his home country. 
-    </p>
-
-    <p class="story-text">
-      In 2026, in his 2nd year of highschool, he decided to stop waiting for someone else to build it. <strong>Refract</strong> started as an answer to a simple question: what would a news outlet look like if its first priority was clarity?
-    </p>
-
-    <p class="story-text">
-      The answer was a bilingual platform, in English and Spanish,  covering LGBTQ+ rights, Peruvian politics, and US policy with rigour that Peruvian media rarley manages to withstand. Every article sourced. Every fact-check published with full methodology. And alongside the journalism, a real resource page for LGBTQ+ people in Peru who need help, not just information.
-    </p>
-
-    <div class="pull-quote">
-      <div class="pull-quote-text">"Most news doesn't lie outright. It just shows you one angle of the light. Refract breaks complex stories into their real components — so young people can see the full spectrum of what's actually happening."</div>
-      <div class="pull-quote-attr">— The Refract Manifesto</div>
-    </div>
-
-    <p class="story-text">
-      Refract is not a project. It is not a school assignment. It is a publication — built by a teenager in Lima who looked at the media landscape around him, found it insufficient, and decided that was a problem worth solving.
-    </p>
-
-    <!-- PILLARS -->
-    <div class="section-break">
-      <div class="section-break-title">What We Stand For</div>
-      <div class="section-break-line"></div>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 01</div>
-        <div class="pillar-title">Radical Clarity</div>
-        <div class="pillar-desc">No jargon. No filler. Every story explained as simply as possible without losing the complexity that actually matters.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 02</div>
-        <div class="pillar-title">Verified Always</div>
-        <div class="pillar-desc">Nothing published without a source. We show our work so readers can verify it themselves — always.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 03</div>
-        <div class="pillar-title">The Ignored Stories</div>
-        <div class="pillar-desc">LGBTQ+ rights. Latin American politics. The stories mainstream outlets treat as footnotes are our front page.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 04</div>
-        <div class="pillar-title">We Report. We Also Help.</div>
-        <div class="pillar-desc">Journalism plus real resources for people who need more than information. Refract is a publication and a safe space.</div>
-      </div>
-    </div>
-
-    <!-- TEAM -->
-    <div class="section-break">
-      <div class="section-break-title">The Team</div>
-      <div class="section-break-line"></div>
-    </div>
-
-    <div class="pillars team-grid" style="grid-template-columns:1fr 1fr;">
+  <div class="pillars team-grid team-cards">
       <div class="pillar">
         <div class="pillar-num" style="color:var(--sage);">FOUNDER & EDITOR-IN-CHIEF</div>
         <div class="pillar-title">Cristóbal de Asín</div>
@@ -269,37 +218,27 @@ footer{border-top:1px solid var(--border);padding:48px 40px;}
         <div class="pillar-title">Ignacio Arias</div>
         <div class="pillar-desc">Wrote Refract's piece on Perú Evolutivo, his interactive site on Peru's evolutionary history.</div>
       </div>
-      <!-- ➕ To add a team member: copy one of the two blocks above and edit the role, name, and description. -->
-    </div>
-    <a class="sidebar-link" href="team.html" style="margin-top:16px;">Meet the team →</a>
-
+        <!-- ➕ To add a team member: copy a pillar block above and edit the role, name, and description. -->
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar-col">
-
-    <div class="sidebar-card">
-      <div class="sidebar-card-header">
-        <div class="sidebar-card-title">About the Founder</div>
-      </div>
-      <div class="sidebar-card-body">
-        <p><strong style="color:var(--white)">Cristóbal de Asín</strong> is a 10th grade student based in Lima, Peru. He founded Refract in 2026.</p>
-        <p>He is 16 years old and runs Refract entirely independently — writing, editing, fact-checking, and building the platform himself.</p>
-        <p>He writes primarily in English and Spanish, covering LGBTQ+ rights, Peruvian political affairs, and US policy.</p>
-      </div>
-    </div>
-
-    <div class="sidebar-card" style="border-top-color:var(--slate);margin-top:1px;">
-      <div class="sidebar-card-header">
-        <div class="sidebar-card-title" style="color:var(--slate);">Support resources</div>
-      </div>
-      <div class="sidebar-card-body">
-        <p>Refract isn't just a news outlet. We maintain a full directory of LGBTQ+ support organisations in Peru — legal help, mental health care, and crisis lines.</p>
-      </div>
-      <a class="sidebar-link" href="apoyo.html">View all resources →</a>
-    </div>
-
+  <div class="section-break">
+    <div class="section-break-title">What people say</div>
+    <div class="section-break-line"></div>
   </div>
+
+  <div class="quotes">
+    <blockquote class="quote-card" style="--accent:var(--slate);">
+      <p class="quote-text">“Refract has made me improve my writing skills a lot. Cristóbal really helped me with the issues I had along the way, and I couldn't have asked for a better mentor than him.”</p>
+      <div class="quote-name">Mateo Topelberg</div>
+      <div class="quote-role">Refract Writer</div>
+    </blockquote>
+    <blockquote class="quote-card" style="--accent:var(--sage);">
+      <p class="quote-text">“Well, I think it's an interesting proposal, especially in the purpose it has, in the sense that students gain more knowledge on the importance of citations.”</p>
+      <div class="quote-name">Marie Elena Guevara</div>
+      <div class="quote-role">Investigation and Biology Teacher, Santa María Marianistas</div>
+    </blockquote>
+  </div>
+
 </div>
 
 <!-- FOOTER -->
