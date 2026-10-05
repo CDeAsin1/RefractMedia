@@ -166,7 +166,7 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
 .inv-preview{max-width:1400px;margin:0 auto;padding:72px 40px 8px;}
 .inv-preview-head{margin-bottom:28px;}
 .inv-preview-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.4vw,42px);font-weight:900;color:var(--white);letter-spacing:-.02em;line-height:1.1;}
-.inv-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.inv-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .inv-locked{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);overflow:hidden;position:relative;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .3s;}
 .inv-locked::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));z-index:2;}
 .inv-locked:hover{transform:translateY(-4px);border-color:rgba(193,123,107,.5);box-shadow:0 24px 50px -24px rgba(0,0,0,.9);}
@@ -212,6 +212,35 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
   .page-hero{padding-top:64px!important;padding-bottom:52px!important;}
   .gate-code-panel>div>div[style*="display:flex"]{flex-direction:column;}.gate-code-btn{align-self:stretch;}}
 @media(prefers-reduced-motion:reduce){.page-hero::before,.page-hero::after,.inv-hero-cta span{animation:none;}}
+
+/* Interview series */
+.inv-interview{grid-column:1/-1;}
+.iv-layout{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:36px;align-items:start;margin-top:8px;}
+.iv-portrait{border:1px solid var(--border);overflow:hidden;position:sticky;top:96px;}
+.iv-portrait img{display:block;width:100%;height:auto;transition:transform 1.2s cubic-bezier(.16,1,.3,1);}
+.inv-interview:hover .iv-portrait img{transform:scale(1.03);}
+.iv-who{margin-bottom:18px;}
+.iv-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--white);line-height:1.2;}
+.iv-name small{font-family:'DM Mono',monospace;font-size:10px;font-weight:400;letter-spacing:.12em;color:var(--muted);}
+.iv-role{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-top:4px;line-height:1.6;}
+.iv-q{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin:22px 0 10px;line-height:1.6;}
+.iv-q span{color:var(--muted);}
+.iv-a{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--white);line-height:1.6;border-left:2px solid var(--terra);padding-left:18px;}
+.iv-a em,.iv-tr em{font-style:normal;color:var(--amber);}
+.iv-tr{font-size:14px;color:var(--subtle);line-height:1.7;margin-top:10px;padding-left:20px;}
+.iv-tr::before{content:'EN · ';font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);}
+.iv-pull{margin:28px 0 8px;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(26px,3.4vw,42px);line-height:1.15;letter-spacing:-.02em;
+  background:linear-gradient(120deg,var(--terra),var(--amber) 50%,var(--sage));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.iv-pull span{display:block;margin-top:10px;font-family:'DM Mono',monospace;font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;-webkit-text-fill-color:var(--muted);color:var(--muted);}
+.iv-second{background:var(--surface-2);border:1px solid var(--border);border-left:2px solid var(--slate);padding:28px 30px;margin-top:12px;}
+.iv-second .iv-role{color:var(--slate);}
+.iv-second .iv-q{color:var(--slate);text-transform:none;letter-spacing:.04em;font-size:11px;margin-top:0;}
+.iv-qa-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.iv-a-en{border-left-color:var(--slate);font-size:17px;}
+@media(max-width:900px){.iv-layout{grid-template-columns:1fr;}.iv-portrait{position:static;max-width:420px;}.iv-qa-pair{grid-template-columns:1fr;}}
+@media(max-width:600px){.iv-second{padding:22px 18px;}.iv-a{font-size:16.5px;}}
+@media(max-width:1100px){.inv-preview-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){.inv-preview-grid{grid-template-columns:1fr;}}
 </style>
 <link rel="stylesheet" href="refract-fx.css">
 </head>
@@ -276,6 +305,14 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
     <h2 class="inv-preview-title">What you'll unlock</h2>
   </div>
   <div class="inv-preview-grid">
+    <a class="inv-locked" href="#gate-screen">
+      <div class="inv-locked-img"><img src="interview-juan-nicolas.webp" alt="" aria-hidden="true" style="object-position:center 30%;"><span class="inv-lock">🔒 Approved readers only</span></div>
+      <div class="inv-locked-body">
+        <div class="inv-type">Interview Series · 01</div>
+        <div class="inv-locked-title">Seen or Sidelined? Two LGBTQ+ Voices on Who Gets Shown on Screen</div>
+        <p class="inv-locked-desc">An activist in Lima and a student in Wisconsin answer the same two questions about representation.</p>
+      </div>
+    </a>
     <a class="inv-locked" href="#gate-screen">
       <div class="inv-locked-img"><img src="survey-baseline-chart.png" alt="" aria-hidden="true"><span class="inv-lock">🔒 Approved readers only</span></div>
       <div class="inv-locked-body">
@@ -390,6 +427,69 @@ footer{border-top:1px solid var(--border);padding:48px 40px;margin-top:80px;}
     ─────────────────────────────────────────────────────────── -->
 
     <div class="inv-grid">
+
+      <!-- Interview series 01 — LGBTQ+ representation, Peru and the US -->
+      <div class="inv-card inv-interview" id="interview-01">
+        <div class="inv-type">Interview Series · 01</div>
+        <div class="inv-title">Seen or Sidelined? Two LGBTQ+ Voices on Who Gets Shown on Screen</div>
+        <p class="inv-desc">Refract's first reader survey found that 85.7% of secondary school students in Lima rated the accessibility of LGBTQ+ news at 1–2 out of 5. We wanted to hear from the people behind that number, so we asked two members of the LGBTQ+ community, one in Peru and one in the United States, the same two questions: how do they see the community represented in the news and on television, and what has their own experience been like?</p>
+
+        <div class="iv-layout">
+          <figure class="iv-portrait">
+            <img src="interview-juan-nicolas.webp" alt="Refract interview card: portrait of Juan Nicolás Montoya, LGBTQ+ activist and marketing strategic planner" loading="lazy">
+          </figure>
+          <div class="iv-voice">
+            <div class="iv-who">
+              <div class="iv-name">Juan Nicolás Montoya</div>
+              <div class="iv-role">LGBTQ+ Activist &amp; Marketing Strategic Planner · Peru</div>
+            </div>
+            <div class="iv-q">On representation <span>· Sobre la representación</span></div>
+            <blockquote class="iv-a" lang="es">“Sinceramente, la tele peruana casi siempre nos ha puesto en dos cajones: o somos el chiste del programa cómico o salimos en la sección de policiales. En marketing siempre decimos que <em>‘lo que no se muestra bien, no existe’</em>, y acá la representación ha sido superinjusta. Últimamente se ve un poquito más de apertura en redes sociales, pero la televisión abierta todavía le tiene pánico a mostrar nuestras vidas con normalidad, sin morbo ni caricaturas.”</blockquote>
+            <p class="iv-tr" lang="en">“Honestly, Peruvian TV has almost always put us in two boxes: either we're the joke on the comedy show or we show up in the crime section. In marketing we always say <em>‘what isn't shown well doesn't exist’</em>, and here representation has been deeply unfair. Lately there's a little more openness on social media, but broadcast TV is still terrified of showing our lives as normal, without morbid curiosity or caricatures.”</p>
+            <div class="iv-q">On his own experience <span>· Sobre la experiencia personal</span></div>
+            <blockquote class="iv-a" lang="es">“Mira, ha sido un camino de puro aprendizaje y de ponerse fuerte. Vivir en una sociedad conservadora te obliga a estar afirmándote todo el tiempo. Pero haber pasado por eso también me dio mucha empatía y visión; hoy uso justamente lo que sé de comunicación y estrategia para abrir cancha, meter el tema de la diversidad en la mesa y demostrar que nuestras historias importan y valen igual que las de cualquiera.”</blockquote>
+            <p class="iv-tr" lang="en">“Look, it's been a road of pure learning and of growing stronger. Living in a conservative society forces you to keep asserting yourself all the time. But going through that also gave me a lot of empathy and perspective; today I use exactly what I know about communication and strategy to make room, put diversity on the table and show that our stories matter and are worth as much as anyone's.”</p>
+          </div>
+        </div>
+
+        <div class="iv-pull">“Lo que no se muestra bien, no existe.”<span>What isn't shown well doesn't exist.</span></div>
+
+        <div class="iv-second">
+          <div class="iv-who">
+            <div class="iv-name">Sky <small>(pseudonym)</small></div>
+            <div class="iv-role">22 · Biology student, University of Wisconsin–Eau Claire · United States</div>
+          </div>
+          <div class="iv-qa-pair">
+            <div>
+              <div class="iv-q">How do you usually see the LGBTQ+ community represented in American news or on television? Is that representation fair?</div>
+              <blockquote class="iv-a iv-a-en">“I haven't seen much representation, any really, that isn't from small indie studios or that causes public issues and controversy.”</blockquote>
+            </div>
+            <div>
+              <div class="iv-q">What has your experience been like as a member of the LGBTQ+ community?</div>
+              <blockquote class="iv-a iv-a-en">“It's… hard? I guess, to just ‘ask’. I'm afraid to be more open and find people like me.”</blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-results" style="border-color:rgba(123,158,143,.3);">
+          <div class="inv-results-label" style="color:var(--sage);">What both of them said</div>
+          <div class="inv-results-body">
+            From Lima and from Wisconsin, both describe the same two problems. LGBTQ+ people are either missing from mainstream screens or shown only through comedy, crime or controversy, and that absence makes it harder to be open in everyday life. Juan Nicolás sees social media opening up faster than broadcast television; Sky finds representation mostly in small independent productions.
+          </div>
+        </div>
+
+        <div class="inv-results" style="border-color:rgba(232,213,176,.3);">
+          <div class="inv-results-label" style="color:var(--amber);">Methodology note</div>
+          <div class="inv-results-body">
+            Two interviews conducted by Refract in 2026, using the same two questions. Juan Nicolás Montoya answered in Spanish; his answers are published in full with an English translation by Refract. Sky answered in English; "Sky" is a pseudonym used at the interviewee's request, and the interviewee agreed to publication. Answers are lightly edited for spelling only. Two voices are not a representative sample: this piece shows lived experience, not statistics.
+          </div>
+        </div>
+
+        <div class="inv-meta">
+          <span class="inv-date">2026</span>
+          <span class="inv-tag">Interview</span>
+        </div>
+      </div>
 
       <!-- Baseline reader survey — from Refract's founding research phase -->
       <div class="inv-card">
